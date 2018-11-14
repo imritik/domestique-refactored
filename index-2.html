@@ -31,6 +31,105 @@
     <!-- CSS Global -->
     <link rel="stylesheet" href="assets/css/theme.min.css">
 
+    <style>
+        /* Full-width input fields */
+        
+        input[type=tel],
+        input[type=email] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            /* border: 1px solid #ccc; */
+            box-sizing: border-box;
+        }
+        /* Set a style for all buttons */
+        /* Extra styles for the cancel button */
+        
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+        
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+        
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        /* The Modal (background) */
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            padding-top: 60px;
+        }
+        /* Modal Content/Box */
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+        /* The Close Button (x) */
+        /* Add Zoom Animation */
+        
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+        
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+        
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+            to {
+                transform: scale(1)
+            }
+        }
+        /* Change styles for span and cancel button on extra small screens */
+        
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -76,13 +175,19 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link cd-signin" id="nav-item__menu" aria-haspopup="true" data-toggle="modal" href="#tab" aria-expanded="false">
-							Login/Signup
-						</a>
+                        <a class="nav-link dropdown-toggle" id="nav-item__menu" data-toggle="dropdown" aria-haspopup="true" data-toggle="modal" aria-expanded="false" style="cursor:pointer">
+							Login/Signup<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" style="background:transparent">
+                            <li><a style="color:#990033;" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+                            </li>
+                            <li><a onclick="document.getElementById('id02').style.display='block'" style="width:auto;" style="color:#990033 ">Signup</a> </li>
+                        </ul>
 
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://api.whatsapp.com/send?phone=919554864888&text=Hey%20i%20want%20to%20book%20a%20domestiQue%20service%20professional" target="blank">Book with Whatsapp &nbsp;<i class="fa fa-whatsapp" style="color:#25D366;font-size: 18px"></i></a>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="https://api.whatsapp.com/send?phone=919554864888&text=Hey%20i%20want%20to%20book%20a%20domestiQue%20service%20professional " target="blank ">Book with Whatsapp &nbsp;<i class="fa fa-whatsapp
+                                " style="color:#25D366;font-size: 18px "></i></a>
 
                     </li>
                 </ul>
@@ -91,76 +196,123 @@
             <!-- / .navbar-collapse -->
 
         </div>
-
-
-
-
     </nav>
     <!-- / .navbar -->
 
-    <!-- Modal -->
-    <div id="tab" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Modal Header</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
 
+    <!-- login form maodal -->
+    <div id="id01" class="modal">
+        <div class="container">
+            <form class="modal-content animate form-group" action="/action_page.php">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="img_avatar2.png" alt="Avatar" class="avatar">
                 </div>
-                <div class="modal-body">
-                    <div class="container">
+
+                <div class="container">
+                    <label for="uname"><b>Mobile no:</b></label>
+                    <input type="tel" placeholder="Enter your contact number" id="tel" name="uname" class="form-control" pattern="[1-9]{1}[0-9]{9}" required>
+
+                    <br>
+                    <br>
 
 
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
-                            <li><a data-toggle="tab" href="#menu1">Register</a></li>
-
-                        </ul>
-
-                        <div class="tab-content">
-                            <div id="home" class="tab-pane fade in active">
-                                <h3>HOME</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                            <div id="menu1" class="tab-pane fade">
-                                <h3>Menu 1</h3>
-                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-
-                        </div>
-                    </div>
+                    <button type="submit" class="btn btn-success">Login</button>
+                    <label>
+                                      <input type="checkbox" checked="checked" name="remember"> Remember me
+                                    </label>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                <div class="container" style="background-color:#f1f1f1">
+
+                    <span class="psw">Forgot <a href="#">password?</a></span>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
+    <!-- REGISTER FORM MODAL -->
+    <div id="id02" class="modal">
+        <div class="container">
+            <form class="modal-content animate form-group" action="/action_page.php">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                    <label for="uname"><b>Mobile no:</b></label>
+                    <input type="tel" placeholder="Enter your contact number" id="tel" name="uname" class="form-control" pattern="[1-9]{1}[0-9]{9}" required>
+                    <span id="message"></span>
+
+                    <label for="psw"><b>Email</b></label>
+                    <input type="email" placeholder="Enter email" name="psw" class="form-control" required>
+
+                    <button type="submit" class="btn btn-success">Register</button>
+
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id02');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
+
+    <!-- FOR MOBILE NUMBER VALIDATION -->
+
+
+
+
 
 
     <!-- WELCOME
 	================================================== -->
-    <section class="section section_welcome" data-parallax="scroll" data-image-src="assets/img/1.jpg">
+    <section class="section section_welcome " data-parallax="scroll " data-image-src="assets/img/1.jpg ">
 
         <!-- Content -->
-        <div class="section_welcome__main">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col">
+        <div class="section_welcome__main ">
+            <div class="container ">
+                <div class="row align-items-center ">
+                    <div class="col ">
 
                         <!-- Heading -->
-                        <h2 class="section__preheading section_welcome__preheading text-center text-muted">
-                            <span class="text-primary" style="font-size: 15px">Instant access</span>&nbsp;&nbsp; to
+                        <h2 class="section__preheading section_welcome__preheading text-center text-muted ">
+                            <span class="text-primary " style="font-size: 15px ">Instant access</span>&nbsp;&nbsp; to
                         </h2>
-                        <h1 class="section__heading section_welcome__heading text-center" style="font-size:50px"> High Quality Domestic Services
+                        <h1 class="section__heading section_welcome__heading text-center " style="font-size:50px "> High Quality Domestic Services
                         </h1>
-                        <!-- <p class="section__subheading section_welcome__subheading text-center text-muted">
+                        <!-- <p class="section__subheading section_welcome__subheading text-center text-muted ">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non illo, alias animi iusto neque, sint corrupti? Laudantium, dignissimos id excepturi facilis, facere saepe quasi placeat praesentium ipsa sapiente illo molestiae?
                         </p> -->
 
                         <!-- Button -->
-                        <div class="text-center">
-                            <a href="#section_reservation" class="btn btn-primary text-white">
+                        <div class="text-center ">
+                            <a href="#section_reservation " class="btn btn-primary text-white ">
 								Book Now!
 							</a>
                         </div>
@@ -173,36 +325,36 @@
         </div>
 
         <!-- Footer -->
-        <div class="section_welcome__footer">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md">
+        <div class="section_welcome__footer ">
+            <div class="container ">
+                <div class="row align-items-center ">
+                    <div class="col-md ">
 
                         <!-- Social links -->
-                        <ul class="section_welcome__footer__social text-center text-lg-left">
+                        <ul class="section_welcome__footer__social text-center text-lg-left ">
                             <li>
-                                <a href="https://api.whatsapp.com/send?phone=919554864888&text=Hey%20i%20want%20to%20book%20a%20domestiQue%20service%20professional" target="blank">
-                                    <i class="fa fa-whatsapp"></i>
+                                <a href="https://api.whatsapp.com/send?phone=919554864888&text=Hey%20i%20want%20to%20book%20a%20domestiQue%20service%20professional " target="blank ">
+                                    <i class="fa fa-whatsapp "></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.facebook.com/domestique88" target="blank">
-                                    <i class="fa fa-facebook"></i>
+                                <a href="https://www.facebook.com/domestique88 " target="blank ">
+                                    <i class="fa fa-facebook "></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/official_domestique" target="blank">
-                                    <i class="fa fa-instagram"></i>
+                                <a href="https://www.instagram.com/official_domestique " target="blank ">
+                                    <i class="fa fa-instagram "></i>
                                 </a>
                             </li>
                         </ul>
 
                     </div>
-                    <div class="col-md">
+                    <div class="col-md ">
 
                         <!-- Address -->
-                        <div class="section_welcome__footer__address text-center text-lg-right">
-                            <i class="fa fa-map-marker"></i> NH-58 adjoining KIET COLLEGE, GZB, IN
+                        <div class="section_welcome__footer__address text-center text-lg-right ">
+                            <i class="fa fa-map-marker "></i> NH-58 adjoining KIET COLLEGE, GZB, IN
                         </div>
 
                     </div>
@@ -216,26 +368,26 @@
 
     <!-- DISCOVER
 	================================================== -->
-    <section class="section section_discover section_no-padding_bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 align-self-start">
+    <section class="section section_discover section_no-padding_bottom ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-2 align-self-start ">
 
                     <!-- Description -->
-                    <p class="section_discover__description">
+                    <p class="section_discover__description ">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     </p>
 
                 </div>
-                <div class="col-md-4 align-self-start">
+                <div class="col-md-4 align-self-start ">
 
                     <!-- Image -->
-                    <div class="section_discover__img">
-                        <img src="assets/img/screen_2.PNG" class="img-fluid" alt="...">
+                    <div class="section_discover__img ">
+                        <img src="assets/img/screen_2.PNG " class="img-fluid " alt="... ">
                     </div>
 
                 </div>
-                <div class="col-md-6 align-self-center">
+                <div class="col-md-6 align-self-center ">
 
                     <!-- Content -->
                     <h2>High Quality & Trusted Professionals</h2>
@@ -252,26 +404,26 @@
 
     <!-- DISCOVER
 	================================================== -->
-    <section class="section section_discover">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 order-md-2 align-self-end">
+    <section class="section section_discover ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-2 order-md-2 align-self-end ">
 
                     <!-- Description -->
-                    <p class="section_discover__description">
+                    <p class="section_discover__description ">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     </p>
 
                 </div>
-                <div class="col-md-4 order-md-3 align-self-start">
+                <div class="col-md-4 order-md-3 align-self-start ">
 
                     <!-- Image -->
-                    <div class="section_discover__img alt">
-                        <img src="assets/img/screen_3.PNG" class="img-fluid" alt="...">
+                    <div class="section_discover__img alt ">
+                        <img src="assets/img/screen_3.PNG " class="img-fluid " alt="... ">
                     </div>
 
                 </div>
-                <div class="col-md-6 order-md-1 align-self-center">
+                <div class="col-md-6 order-md-1 align-self-center ">
 
                     <!-- Content -->
                     <h2>Multiple Services With Right Budget</h2>
@@ -287,26 +439,26 @@
     </section>
     <!-- DISCOVER
 	================================================== -->
-    <section class="section section_discover section_no-padding_bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 align-self-start">
+    <section class="section section_discover section_no-padding_bottom ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-2 align-self-start ">
 
                     <!-- Description -->
-                    <p class="section_discover__description">
+                    <p class="section_discover__description ">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     </p>
 
                 </div>
-                <div class="col-md-4 align-self-start">
+                <div class="col-md-4 align-self-start ">
 
                     <!-- Image -->
-                    <div class="section_discover__img">
-                        <img src="assets/img/screen_5.PNG" class="img-fluid" alt="...">
+                    <div class="section_discover__img ">
+                        <img src="assets/img/screen_5.PNG " class="img-fluid " alt="... ">
                     </div>
 
                 </div>
-                <div class="col-md-6 align-self-center">
+                <div class="col-md-6 align-self-center ">
 
                     <!-- Content -->
                     <h2>Serving You </h2>
@@ -322,26 +474,26 @@
     </section>
     <!-- DISCOVER
 	================================================== -->
-    <section class="section section_discover">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 order-md-2 align-self-end">
+    <section class="section section_discover ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-2 order-md-2 align-self-end ">
 
                     <!-- Description -->
-                    <p class="section_discover__description">
+                    <p class="section_discover__description ">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     </p>
 
                 </div>
-                <div class="col-md-4 order-md-3 align-self-start">
+                <div class="col-md-4 order-md-3 align-self-start ">
 
                     <!-- Image -->
-                    <div class="section_discover__img alt">
-                        <img src="assets/img/screen_7.PNG" class="img-fluid" alt="...">
+                    <div class="section_discover__img alt ">
+                        <img src="assets/img/screen_7.PNG " class="img-fluid " alt="... ">
                     </div>
 
                 </div>
-                <div class="col-md-6 order-md-1 align-self-center">
+                <div class="col-md-6 order-md-1 align-self-center ">
 
                     <!-- Content -->
                     <h2>Hustle Free Service</h2>
@@ -358,16 +510,16 @@
 
     <!-- ABOUT
 	================================================== -->
-    <section class="section section_about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
+    <section class="section section_about ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-4 ">
 
                     <!-- Description -->
-                    <p class="section_about__description">
+                    <p class="section_about__description ">
                         GET THE SERVICE YOU WANT, WITH JUST A FEW CLICKS ON YOUR PHONE.
                     </p>
-                    <p class="section_about__description">We are dedicated to giving you the very best of our services with the focus on clarity, uniqueness, and reliability</p>
+                    <p class="section_about__description ">We are dedicated to giving you the very best of our services with the focus on clarity, uniqueness, and reliability</p>
 
                 </div>
             </div>
@@ -378,329 +530,329 @@
 
     <!-- MENU
 	================================================== -->
-    <section class="section section_menu section_border_bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col">
+    <section class="section section_menu section_border_bottom ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col ">
 
                     <!-- Heading -->
-                    <h2 class="section__heading text-center">
+                    <h2 class="section__heading text-center ">
                         Our Pricing
                     </h2>
-                    <p class="section__subheading text-center">
+                    <p class="section__subheading text-center ">
 
                     </p>
 
                 </div>
             </div>
             <!-- / .row -->
-            <div class="row">
-                <div class="col">
+            <div class="row ">
+                <div class="col ">
 
                     <!-- Navigation -->
-                    <nav class="section_menu__nav">
+                    <nav class="section_menu__nav ">
                         <ul>
-                            <li class="active">
-                                <a href="#menu_images" data-filter=".mains">Plumber</a>
+                            <li class="active ">
+                                <a href="#menu_images " data-filter=".mains ">Plumber</a>
                             </li>
                             <li>
-                                <a href="#menu_images" data-filter=".lunch">Beautician</a>
+                                <a href="#menu_images " data-filter=".lunch ">Beautician</a>
                             </li>
                             <li>
-                                <a href="#menu_images" data-filter=".dinner">Electrician</a>
+                                <a href="#menu_images " data-filter=".dinner ">Electrician</a>
                             </li>
                             <li>
-                                <a href="#menu_images" data-filter=".drinks">Photographers</a>
+                                <a href="#menu_images " data-filter=".drinks ">Photographers</a>
                             </li>
                         </ul>
                     </nav>
 
                 </div>
             </div>
-            <div class="row section_menu__grid" id="menu_images">
+            <div class="row section_menu__grid " id="menu_images ">
 
-                <div class="col-md-12 section_menu__grid__item mains">
+                <div class="col-md-12 section_menu__grid__item mains ">
                     <!-- Card -->
-                    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+                    <div class="card card-image " style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg); ">
 
                         <!-- Content -->
-                        <div class="rgba-black-strong py-5 px-4">
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-md-10 col-xl-8">
+                        <div class="rgba-black-strong py-5 px-4 ">
+                            <div class="row d-flex justify-content-center ">
+                                <div class="col-md-10 col-xl-8 ">
 
                                     <!--Accordion wrapper-->
-                                    <div class="accordion md-accordion accordion-5" id="accordionEx5" role="tablist" aria-multiselectable="true">
+                                    <div class="accordion md-accordion accordion-5 " id="accordionEx5 " role="tablist " aria-multiselectable="true ">
 
 
 
                                         <!-- Accordion card -->
-                                        <div class="card mb-4">
+                                        <div class="card mb-4 ">
 
                                             <!-- Card header -->
-                                            <div class="card-header p-0 z-depth-1" role="tab" id="heading32">
-                                                <a data-toggle="collapse" data-parent="#accordionEx5" href="#collapse32" aria-expanded="true" aria-controls="collapse32">
-                                                    <i class="fa fa-cogs fa-2x p-3 mr-4 float-left black-text" aria-hidden="true"></i>
-                                                    <h4 class="text-uppercase white-text mb-0 py-3 mt-1">
+                                            <div class="card-header p-0 z-depth-1 " role="tab " id="heading32 ">
+                                                <a data-toggle="collapse " data-parent="#accordionEx5 " href="#collapse32 " aria-expanded="true " aria-controls="collapse32 ">
+                                                    <i class="fa fa-cogs fa-2x p-3 mr-4 float-left black-text " aria-hidden="true "></i>
+                                                    <h4 class="text-uppercase white-text mb-0 py-3 mt-1 ">
                                                         Item #3
                                                     </h4>
                                                 </a>
                                             </div>
 
                                             <!-- Card body -->
-                                            <div id="collapse32" class="collapse" role="tabpanel" aria-labelledby="heading32" data-parent="#accordionEx5">
-                                                <div class="card-body rgba-black-light white-text z-depth-1">
-                                                    <div class="table-responsive">
-                                                        <div class="bs-example">
-                                                            <table class="table table-bordered">
+                                            <div id="collapse32 " class="collapse " role="tabpanel " aria-labelledby="heading32 " data-parent="#accordionEx5 ">
+                                                <div class="card-body rgba-black-light white-text z-depth-1 ">
+                                                    <div class="table-responsive ">
+                                                        <div class="bs-example ">
+                                                            <table class="table table-bordered ">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th style="text-align:center">Subcategory</th>
-                                                                        <th style="text-align:center">Activity</th>
+                                                                        <th style="text-align:center ">Subcategory</th>
+                                                                        <th style="text-align:center ">Activity</th>
                                                                         <th>Unit</th>
-                                                                        <th style="text-align:center">Price</th>
+                                                                        <th style="text-align:center ">Price</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr>
                                                                         <td> Ball Cock Fixing</td>
                                                                         <td> Ball Cock Fixing</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 200</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 200</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Cleaning Of Bottle Trap</td>
                                                                         <td> Cleaning Of Bottle Trap</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 200</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 200</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Installation</td>
                                                                         <td> Shower Fitting</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 300</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 300</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Installation</td>
                                                                         <td> Gali Trap Fitting</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Installation</td>
                                                                         <td> Tap Washer / Jumper</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 150</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 150</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Installation</td>
                                                                         <td> Jet Installation</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 300</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 300</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Installation</td>
                                                                         <td> Wash Basin - Installation</td>
-                                                                        <td style="text-align:center"> Simple & Regular</td>
-                                                                        <td style="text-align:center"> ₹ 500</td>
+                                                                        <td style="text-align:center "> Simple & Regular</td>
+                                                                        <td style="text-align:center "> ₹ 500</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Installation</td>
                                                                         <td> Wash Basin - Installation - Fancy</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 900</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 900</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Installation</td>
                                                                         <td> Water Tank Installation</td>
-                                                                        <td style="text-align:center">
+                                                                        <td style="text-align:center ">
                                                                             <=500 Litre</td>
-                                                                                <td style="text-align:center"> ₹ 1,500</td>
+                                                                                <td style="text-align:center "> ₹ 1,500</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Installtion</td>
                                                                         <td> Bathtub Installation</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 2000</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 2000</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Jacuzzi</td>
                                                                         <td> Jacuzzi Servicing</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Jacuzzi</td>
                                                                         <td> Jacuzzi Installation</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 3000</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 3000</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Jacuzzi</td>
                                                                         <td> Jacuzzi Uninstallation</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 2500</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 2500</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Leakage & Water Blockage</td>
                                                                         <td> Leakage Repair</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Leakage & Water Blockage</td>
                                                                         <td> Water Blockage - To Be Cleaned With Pressure Machine</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Leakage & Water Blockage</td>
                                                                         <td> Repairing Closet Bend Leakage</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Pipe Extension</td>
                                                                         <td> Pipe Extension</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> PVC</td>
                                                                         <td> Pipe Fitting</td>
-                                                                        <td style="text-align:center"> 4 Inch</td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> 4 Inch</td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> PVC</td>
                                                                         <td> Pipe Fitting</td>
-                                                                        <td style="text-align:center"> 3 Inch</td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> 3 Inch</td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> PVC</td>
                                                                         <td> Connection Washer Change</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 150</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 150</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Wash Basin</td>
                                                                         <td> Removal</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 200</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 200</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Western Commode</td>
                                                                         <td> Double Siphon</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 2000</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 2000</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Western Commode</td>
                                                                         <td> Single Siphon</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 1500</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 1500</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Western Commode</td>
                                                                         <td> Wall Hanging</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 2500</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 2500</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Western Commode</td>
                                                                         <td> Cover Fitting</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 300</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 300</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Western Commode</td>
                                                                         <td> Removal</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 500</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 500</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Pipeline Fixing</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Cleaning Of Nani Trap</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 300</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 300</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Jet Repair</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 200</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 200</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Tank With Pipe Fittings</td>
-                                                                        <td style="text-align:center"> 1 Inch</td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> 1 Inch</td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Tap/Faucet Cleaning</td>
-                                                                        <td style="text-align:center"> 1</td>
-                                                                        <td style="text-align:center"> ₹ 100</td>
+                                                                        <td style="text-align:center "> 1</td>
+                                                                        <td style="text-align:center "> ₹ 100</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Mirror Fixing</td>
-                                                                        <td style="text-align:center"> Less Than 2 Ft</td>
-                                                                        <td style="text-align:center"> ₹ 200</td>
+                                                                        <td style="text-align:center "> Less Than 2 Ft</td>
+                                                                        <td style="text-align:center "> ₹ 200</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Angle Cock</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 300</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 300</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Replacement Of Waste Pipe</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 200</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 200</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Soap Dish / Dispenser / Toilet Paper Holder</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 150</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 150</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> White Cement Application</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Rain Water Outlet</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Wall Mixer</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 300</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 300</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Replacement Of Closet Bend</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 200</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 200</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Bathtub Removal</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 1500</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 1500</td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
@@ -721,36 +873,36 @@
                     <!-- Card -->
                 </div>
 
-                <div class="col-md-12 section_menu__grid__item drinks">
+                <div class="col-md-12 section_menu__grid__item drinks ">
                     <!-- Card -->
-                    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+                    <div class="card card-image " style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg); ">
 
                         <!-- Content -->
-                        <div class="rgba-black-strong py-5 px-4">
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-md-10 col-xl-8">
+                        <div class="rgba-black-strong py-5 px-4 ">
+                            <div class="row d-flex justify-content-center ">
+                                <div class="col-md-10 col-xl-8 ">
 
                                     <!--Accordion wrapper-->
-                                    <div class="accordion md-accordion accordion-5" id="accordionEx5" role="tablist" aria-multiselectable="true">
+                                    <div class="accordion md-accordion accordion-5 " id="accordionEx5 " role="tablist " aria-multiselectable="true ">
 
 
                                         <!-- Accordion card -->
-                                        <div class="card mb-4">
+                                        <div class="card mb-4 ">
 
                                             <!-- Card header -->
-                                            <div class="card-header p-0 z-depth-1" role="tab" id="heading32">
-                                                <a data-toggle="collapse" data-parent="#accordionEx5" href="#collapse32" aria-expanded="true" aria-controls="collapse32">
-                                                    <i class="fa fa-cogs fa-2x p-3 mr-4 float-left black-text" aria-hidden="true"></i>
-                                                    <h4 class="text-uppercase white-text mb-0 py-3 mt-1">
+                                            <div class="card-header p-0 z-depth-1 " role="tab " id="heading32 ">
+                                                <a data-toggle="collapse " data-parent="#accordionEx5 " href="#collapse32 " aria-expanded="true " aria-controls="collapse32 ">
+                                                    <i class="fa fa-cogs fa-2x p-3 mr-4 float-left black-text " aria-hidden="true "></i>
+                                                    <h4 class="text-uppercase white-text mb-0 py-3 mt-1 ">
                                                         Item #3
                                                     </h4>
                                                 </a>
                                             </div>
 
                                             <!-- Card body -->
-                                            <div id="collapse32" class="collapse" role="tabpanel" aria-labelledby="heading32" data-parent="#accordionEx5">
-                                                <div class="card-body rgba-black-light white-text z-depth-1">
-                                                    <p class="p-md-4 mb-0">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                            <div id="collapse32 " class="collapse " role="tabpanel " aria-labelledby="heading32 " data-parent="#accordionEx5 ">
+                                                <div class="card-body rgba-black-light white-text z-depth-1 ">
+                                                    <p class="p-md-4 mb-0 ">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
                                                         Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
                                                 </div>
                                             </div>
@@ -766,37 +918,37 @@
                     </div>
                     <!-- Card -->
                 </div>
-                <div class="col-md-12 section_menu__grid__item lunch">
+                <div class="col-md-12 section_menu__grid__item lunch ">
                     <!-- Card -->
-                    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+                    <div class="card card-image " style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg); ">
 
                         <!-- Content -->
-                        <div class="rgba-black-strong py-5 px-4">
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-md-10 col-xl-8">
+                        <div class="rgba-black-strong py-5 px-4 ">
+                            <div class="row d-flex justify-content-center ">
+                                <div class="col-md-10 col-xl-8 ">
 
                                     <!--Accordion wrapper-->
-                                    <div class="accordion md-accordion accordion-5" id="accordionEx5" role="tablist" aria-multiselectable="true">
+                                    <div class="accordion md-accordion accordion-5 " id="accordionEx5 " role="tablist " aria-multiselectable="true ">
 
 
 
                                         <!-- Accordion card -->
-                                        <div class="card mb-4">
+                                        <div class="card mb-4 ">
 
                                             <!-- Card header -->
-                                            <div class="card-header p-0 z-depth-1" role="tab" id="heading32">
-                                                <a data-toggle="collapse" data-parent="#accordionEx5" href="#collapse32" aria-expanded="true" aria-controls="collapse32">
-                                                    <i class="fa fa-cogs fa-2x p-3 mr-4 float-left black-text" aria-hidden="true"></i>
-                                                    <h4 class="text-uppercase white-text mb-0 py-3 mt-1">
+                                            <div class="card-header p-0 z-depth-1 " role="tab " id="heading32 ">
+                                                <a data-toggle="collapse " data-parent="#accordionEx5 " href="#collapse32 " aria-expanded="true " aria-controls="collapse32 ">
+                                                    <i class="fa fa-cogs fa-2x p-3 mr-4 float-left black-text " aria-hidden="true "></i>
+                                                    <h4 class="text-uppercase white-text mb-0 py-3 mt-1 ">
                                                         Item #3
                                                     </h4>
                                                 </a>
                                             </div>
 
                                             <!-- Card body -->
-                                            <div id="collapse32" class="collapse" role="tabpanel" aria-labelledby="heading32" data-parent="#accordionEx5">
-                                                <div class="card-body rgba-black-light white-text z-depth-1">
-                                                    <p class="p-md-4 mb-0">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                            <div id="collapse32 " class="collapse " role="tabpanel " aria-labelledby="heading32 " data-parent="#accordionEx5 ">
+                                                <div class="card-body rgba-black-light white-text z-depth-1 ">
+                                                    <p class="p-md-4 mb-0 ">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
                                                         Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
                                                 </div>
                                             </div>
@@ -812,180 +964,180 @@
                     </div>
                     <!-- Card -->
                 </div>
-                <div class="col-md-12 section_menu__grid__item dinner">
+                <div class="col-md-12 section_menu__grid__item dinner ">
                     <!-- Card -->
-                    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+                    <div class="card card-image " style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg); ">
 
                         <!-- Content -->
-                        <div class="rgba-black-strong py-5 px-4">
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-md-10 col-xl-8">
+                        <div class="rgba-black-strong py-5 px-4 ">
+                            <div class="row d-flex justify-content-center ">
+                                <div class="col-md-10 col-xl-8 ">
 
                                     <!--Accordion wrapper-->
-                                    <div class="accordion md-accordion accordion-5" id="accordionEx5" role="tablist" aria-multiselectable="true">
+                                    <div class="accordion md-accordion accordion-5 " id="accordionEx5 " role="tablist " aria-multiselectable="true ">
 
 
 
                                         <!-- Accordion card -->
-                                        <div class="card mb-4">
+                                        <div class="card mb-4 ">
 
                                             <!-- Card header -->
-                                            <div class="card-header p-0 z-depth-1" role="tab" id="heading32">
-                                                <a data-toggle="collapse" data-parent="#accordionEx5" href="#collapse32" aria-expanded="true" aria-controls="collapse32">
-                                                    <i class="fa fa-cogs fa-2x p-3 mr-4 float-left black-text" aria-hidden="true"></i>
-                                                    <h4 class="text-uppercase white-text mb-0 py-3 mt-1">
+                                            <div class="card-header p-0 z-depth-1 " role="tab " id="heading32 ">
+                                                <a data-toggle="collapse " data-parent="#accordionEx5 " href="#collapse32 " aria-expanded="true " aria-controls="collapse32 ">
+                                                    <i class="fa fa-cogs fa-2x p-3 mr-4 float-left black-text " aria-hidden="true "></i>
+                                                    <h4 class="text-uppercase white-text mb-0 py-3 mt-1 ">
                                                         Item #3
                                                     </h4>
                                                 </a>
                                             </div>
 
                                             <!-- Card body -->
-                                            <div id="collapse32" class="collapse" role="tabpanel" aria-labelledby="heading32" data-parent="#accordionEx5">
-                                                <div class="card-body rgba-black-light white-text z-depth-1">
-                                                    <div class="table-responsive">
-                                                        <div class="bs-example">
-                                                            <table class="table table-bordered">
+                                            <div id="collapse32 " class="collapse " role="tabpanel " aria-labelledby="heading32 " data-parent="#accordionEx5 ">
+                                                <div class="card-body rgba-black-light white-text z-depth-1 ">
+                                                    <div class="table-responsive ">
+                                                        <div class="bs-example ">
+                                                            <table class="table table-bordered ">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th style="text-align:center">Subcategory</th>
-                                                                        <th style="text-align:center">Activity</th>
+                                                                        <th style="text-align:center ">Subcategory</th>
+                                                                        <th style="text-align:center ">Activity</th>
                                                                         <th>Unit</th>
-                                                                        <th style="text-align:center">Price</th>
+                                                                        <th style="text-align:center ">Price</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr>
                                                                         <td> Bulb Fitting</td>
                                                                         <td> Bulb fitting</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 150</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 150</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Door Bell</td>
                                                                         <td> Installation</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 300</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 300</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Door Bell</td>
                                                                         <td> Shifting</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 300</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 300</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Fans</td>
                                                                         <td> Fixing/Removal Ceiling Fan</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 200</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 200</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Fans</td>
                                                                         <td> Fixing Exaust Fan</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 300</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 300</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Geyser</td>
                                                                         <td> Installation</td>
-                                                                        <td style="text-align:center">
+                                                                        <td style="text-align:center ">
                                                                             <10 lt</td>
-                                                                                <td style="text-align:center"> ₹ 300</td>
+                                                                                <td style="text-align:center "> ₹ 300</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Geyser</td>
                                                                         <td> Installation</td>
-                                                                        <td style="text-align:center"> 10 to 15 lt</td>
-                                                                        <td style="text-align:center"> ₹ 350</td>
+                                                                        <td style="text-align:center "> 10 to 15 lt</td>
+                                                                        <td style="text-align:center "> ₹ 350</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Geyser</td>
                                                                         <td> Installation</td>
-                                                                        <td style="text-align:center"> >15 lt</td>
-                                                                        <td style="text-align:center"> ₹ 500</td>
+                                                                        <td style="text-align:center "> >15 lt</td>
+                                                                        <td style="text-align:center "> ₹ 500</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Geyser</td>
                                                                         <td> Uninstallation</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Meter BOX</td>
                                                                         <td> Single Phase Fitting</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 400</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 400</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Meter BOX</td>
                                                                         <td> Three Phase Work</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Meter BOX</td>
                                                                         <td> Servicing</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 500</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 500</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Meter BOX</td>
                                                                         <td> Single Phase Meter Box Shifting (Wiring Additional)</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> ₹ 500</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> ₹ 500</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Television</td>
                                                                         <td> Installation</td>
-                                                                        <td style="text-align:center"> 19" to 29"</td>
-                                                                        <td style="text-align:center"> ₹ 400</td>
+                                                                        <td style="text-align:center "> 19" to 29 "</td>
+                                                                        <td style="text-align:center "> ₹ 400</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Television</td>
                                                                         <td> Installation</td>
-                                                                        <td style="text-align:center"> 32" to 42"</td>
-                                                                        <td style="text-align:center"> ₹ 500</td>
+                                                                        <td style="text-align:center "> 32" to 42 "</td>
+                                                                        <td style="text-align:center "> ₹ 500</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Television</td>
                                                                         <td> Installation</td>
-                                                                        <td style="text-align:center"> 45" to 55"</td>
-                                                                        <td style="text-align:center"> ₹ 650</td>
+                                                                        <td style="text-align:center "> 45" to 55 "</td>
+                                                                        <td style="text-align:center "> ₹ 650</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Television</td>
                                                                         <td> Uninstallation</td>
-                                                                        <td style="text-align:center"> </td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> </td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Motor Rewinding</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> MCB/ Fuse Fixing</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 300</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 300</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Isolator Fixing</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Home Theatre Installation</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> Upon Inspection</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> Upon Inspection</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td> Others</td>
                                                                         <td> Tube Light Fixing (with Frame)</td>
-                                                                        <td style="text-align:center"> One</td>
-                                                                        <td style="text-align:center"> ₹ 150</td>
+                                                                        <td style="text-align:center "> One</td>
+                                                                        <td style="text-align:center "> ₹ 150</td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
@@ -1012,20 +1164,20 @@
 
     <!-- DISHES
 	================================================== -->
-    <section class="section section_dishes">
+    <section class="section section_dishes ">
 
         <!-- Header -->
-        <div class="container">
-            <div class="row">
-                <div class="col">
+        <div class="container ">
+            <div class="row ">
+                <div class="col ">
 
                     <!-- Heading -->
-                    <h2 class="section__heading text-center">
+                    <h2 class="section__heading text-center ">
                         Recommonded Services
                     </h2>
 
                     <!-- Subheading -->
-                    <p class="section__subheading text-center">
+                    <p class="section__subheading text-center ">
                         Highest Rated Services by the customers.
                     </p>
 
@@ -1034,80 +1186,80 @@
         </div>
 
         <!-- Carousel -->
-        <div class="section_dishes__carousel dots-disabled">
-            <div class="section_dishes__carousel__item">
+        <div class="section_dishes__carousel dots-disabled ">
+            <div class="section_dishes__carousel__item ">
 
                 <!-- Image -->
-                <img src="assets/img/26.jpg" alt="..." class="section_dishes__carousel__item__img">
+                <img src="assets/img/26.jpg " alt="... " class="section_dishes__carousel__item__img ">
 
                 <!-- Body -->
-                <div class="section_dishes__carousel__item__body">
-                    <h5 class="section_dishes__carousel__item__body__heading mb-0">
+                <div class="section_dishes__carousel__item__body ">
+                    <h5 class="section_dishes__carousel__item__body__heading mb-0 ">
                         Appliance Repair
                     </h5>
                 </div>
 
             </div>
-            <div class="section_dishes__carousel__item">
+            <div class="section_dishes__carousel__item ">
 
                 <!-- Image -->
-                <img src="assets/img/27.jpg" alt="..." class="section_dishes__carousel__item__img">
+                <img src="assets/img/27.jpg " alt="... " class="section_dishes__carousel__item__img ">
 
                 <!-- Body -->
-                <div class="section_dishes__carousel__item__body">
-                    <h5 class="section_dishes__carousel__item__body__heading mb-0">
+                <div class="section_dishes__carousel__item__body ">
+                    <h5 class="section_dishes__carousel__item__body__heading mb-0 ">
                         Home Cleaning
                     </h5>
                 </div>
 
             </div>
-            <div class="section_dishes__carousel__item">
+            <div class="section_dishes__carousel__item ">
 
                 <!-- Image -->
-                <img src="assets/img/28.jpg" alt="..." class="section_dishes__carousel__item__img">
+                <img src="assets/img/28.jpg " alt="... " class="section_dishes__carousel__item__img ">
 
                 <!-- Body -->
-                <div class="section_dishes__carousel__item__body">
-                    <h5 class="section_dishes__carousel__item__body__heading mb-0">
+                <div class="section_dishes__carousel__item__body ">
+                    <h5 class="section_dishes__carousel__item__body__heading mb-0 ">
                         Shifting Homes
                     </h5>
                 </div>
 
             </div>
-            <div class="section_dishes__carousel__item">
+            <div class="section_dishes__carousel__item ">
 
                 <!-- Image -->
-                <img src="assets/img/29.jpg" alt="..." class="section_dishes__carousel__item__img">
+                <img src="assets/img/29.jpg " alt="... " class="section_dishes__carousel__item__img ">
 
                 <!-- Body -->
-                <div class="section_dishes__carousel__item__body">
-                    <h5 class="section_dishes__carousel__item__body__heading mb-0">
+                <div class="section_dishes__carousel__item__body ">
+                    <h5 class="section_dishes__carousel__item__body__heading mb-0 ">
                         Wedding Photographers
                     </h5>
                 </div>
 
             </div>
-            <div class="section_dishes__carousel__item">
+            <div class="section_dishes__carousel__item ">
 
                 <!-- Image -->
-                <img src="assets/img/30.jpg" alt="..." class="section_dishes__carousel__item__img">
+                <img src="assets/img/30.jpg " alt="... " class="section_dishes__carousel__item__img ">
 
                 <!-- Body -->
-                <div class="section_dishes__carousel__item__body">
-                    <h5 class="section_dishes__carousel__item__body__heading mb-0">
+                <div class="section_dishes__carousel__item__body ">
+                    <h5 class="section_dishes__carousel__item__body__heading mb-0 ">
                         Beauticians | Makeup
                     </h5>
                 </div>
 
             </div>
-            <div class="section_dishes__carousel__item">
+            <div class="section_dishes__carousel__item ">
 
                 <!-- Image -->
-                <img src="assets/img/31.jpg" alt="..." class="section_dishes__carousel__item__img">
+                <img src="assets/img/31.jpg " alt="... " class="section_dishes__carousel__item__img ">
 
                 <!-- Body -->
-                <div class="section_dishes__carousel__item__body">
-                    <h5 class="section_dishes__carousel__item__body__heading mb-0">
+                <div class="section_dishes__carousel__item__body ">
+                    <h5 class="section_dishes__carousel__item__body__heading mb-0 ">
                         House Painters
                     </h5>
                 </div>
@@ -1122,105 +1274,105 @@
 
     <!-- TESTIMONIALS
 	================================================== -->
-    <section class="section section_testimonials section_border_bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col">
+    <section class="section section_testimonials section_border_bottom ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col ">
 
                     <!-- Heading -->
-                    <h2 class="section__heading text-center">
+                    <h2 class="section__heading text-center ">
                         What clients say about us
                     </h2>
 
                     <!-- Subheading -->
-                    <p class="section__subheading text-center">
+                    <p class="section__subheading text-center ">
                         This is the love we got from our customers.
                     </p>
 
                 </div>
             </div>
             <!-- / .row -->
-            <div class="row">
-                <div class="col">
-                    <div class="section_testimonials__carousel">
-                        <div class="section_testimonials__carousel__item text-center text-md-left">
-                            <div class="row align-items-center">
-                                <div class="col-md-3 order-md-3">
+            <div class="row ">
+                <div class="col ">
+                    <div class="section_testimonials__carousel ">
+                        <div class="section_testimonials__carousel__item text-center text-md-left ">
+                            <div class="row align-items-center ">
+                                <div class="col-md-3 order-md-3 ">
 
                                     <!-- Photo -->
-                                    <div class="section_testimonials__photo">
-                                        <img src="assets/img/20.jpg" class="img-fluid" alt="...">
+                                    <div class="section_testimonials__photo ">
+                                        <img src="assets/img/20.jpg " class="img-fluid " alt="... ">
                                     </div>
 
                                 </div>
-                                <div class="col-md-7 order-md-2">
+                                <div class="col-md-7 order-md-2 ">
 
                                     <!-- Blockquote -->
-                                    <blockquote class="section_testimonials__blockquote mx-auto">
+                                    <blockquote class="section_testimonials__blockquote mx-auto ">
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos at veritatis vitae modi ex quis quibusdam error repudiandae adipisci dolore perspiciatis iste, vel fuga a, libero architecto ratione deleniti sequi.
                                         </p>
-                                        <footer class="text-muted">
+                                        <footer class="text-muted ">
                                             Codestacks | IT solutions Company
                                         </footer>
                                     </blockquote>
 
                                 </div>
-                                <div class="col-md-1 order-md-1"></div>
+                                <div class="col-md-1 order-md-1 "></div>
                             </div>
                             <!-- / .row -->
                         </div>
-                        <div class="section_testimonials__carousel__item text-center text-md-left">
-                            <div class="row align-items-center">
-                                <div class="col-md-3 order-md-3">
+                        <div class="section_testimonials__carousel__item text-center text-md-left ">
+                            <div class="row align-items-center ">
+                                <div class="col-md-3 order-md-3 ">
 
                                     <!-- Photo -->
-                                    <div class="section_testimonials__photo">
-                                        <img src="assets/img/21.jpg" class="img-fluid" alt="...">
+                                    <div class="section_testimonials__photo ">
+                                        <img src="assets/img/21.jpg " class="img-fluid " alt="... ">
                                     </div>
 
                                 </div>
-                                <div class="col-md-7 order-md-2">
+                                <div class="col-md-7 order-md-2 ">
 
                                     <!-- Blockquote -->
-                                    <blockquote class="section_testimonials__blockquote mx-auto">
+                                    <blockquote class="section_testimonials__blockquote mx-auto ">
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos at veritatis vitae modi ex quis quibusdam error repudiandae adipisci dolore perspiciatis iste, vel fuga a, libero architecto ratione deleniti sequi.
                                         </p>
-                                        <footer class="text-muted">
+                                        <footer class="text-muted ">
                                             Delen
                                         </footer>
                                     </blockquote>
 
                                 </div>
-                                <div class="col-md-1 order-md-1"></div>
+                                <div class="col-md-1 order-md-1 "></div>
                             </div>
                             <!-- / .row -->
                         </div>
-                        <div class="section_testimonials__carousel__item text-center text-md-left">
-                            <div class="row align-items-center">
-                                <div class="col-md-3 order-md-3">
+                        <div class="section_testimonials__carousel__item text-center text-md-left ">
+                            <div class="row align-items-center ">
+                                <div class="col-md-3 order-md-3 ">
 
                                     <!-- Photo -->
-                                    <div class="section_testimonials__photo">
-                                        <img src="assets/img/22.jpg" class="img-fluid" alt="...">
+                                    <div class="section_testimonials__photo ">
+                                        <img src="assets/img/22.jpg " class="img-fluid " alt="... ">
                                     </div>
 
                                 </div>
-                                <div class="col-md-7 order-md-2">
+                                <div class="col-md-7 order-md-2 ">
 
                                     <!-- Blockquote -->
-                                    <blockquote class="section_testimonials__blockquote mx-auto">
+                                    <blockquote class="section_testimonials__blockquote mx-auto ">
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos at veritatis vitae modi ex quis quibusdam error repudiandae adipisci dolore perspiciatis iste, vel fuga a, libero architecto ratione deleniti sequi.
                                         </p>
-                                        <footer class="text-muted">
+                                        <footer class="text-muted ">
                                             Rahul Arora
                                         </footer>
                                     </blockquote>
 
                                 </div>
-                                <div class="col-md-1 order-md-1"></div>
+                                <div class="col-md-1 order-md-1 "></div>
                             </div>
                             <!-- / .row -->
                         </div>
@@ -1238,35 +1390,35 @@
 
     <!-- NEWSLETTER
 	================================================== -->
-    <section class="section section_gray section_newsletter">
-        <div class="container">
-            <div class="row">
-                <div class="col">
+    <section class="section section_gray section_newsletter ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col ">
 
                     <!-- Heading -->
-                    <h2 class="section__heading section_newsletter__heading text-center">
+                    <h2 class="section__heading section_newsletter__heading text-center ">
                         Expand your business with DomestiQue
                     </h2>
-                    <p class="section__subheading text-center">
+                    <p class="section__subheading text-center ">
                         Join a community of a professionals who have successfully grown their business with us.
                     </p>
 
                 </div>
             </div>
             <!-- / .row -->
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
+            <div class="row justify-content-center ">
+                <div class="col-lg-6 ">
 
                     <!-- Form -->
-                    <div id="mc_embed_signup">
+                    <div id="mc_embed_signup ">
 
-                        <div id="mc_embed_signup_scroll" class="row">
+                        <div id="mc_embed_signup_scroll " class="row ">
 
                             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 
-                            <div class="clear col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary" id="mc-embedded-subscribe">
-									<a href="https://api.whatsapp.com/send?phone=919554864888&text=Hey%20i%20want%20to%20join%20domestique%20as%20a%20service%20expert%20" target="blank">	Join Now</a>
+                            <div class="clear col-md-12 text-center ">
+                                <button type="submit " class="btn btn-primary " id="mc-embedded-subscribe ">
+									<a href="https://api.whatsapp.com/send?phone=919554864888&text=Hey%20i%20want%20to%20join%20domestique%20as%20a%20service%20expert%20 " target="blank ">	Join Now</a>
 									</button>
                             </div>
                         </div>
@@ -1281,144 +1433,14 @@
         <!-- / .container -->
     </section>
 
-    <!-- NEWSLETTER CLONE
-	================================================== -->
-    <!--
-		MailChimp newsletters generally cannot be used more than
-		once on a page, because this will cause HTML IDs conflict.
-		This section solves this problem by calling the 
-		original sign-up form and imitating its behaviour. Please 
-		don't use it without the original sign-up form. Remove 
-		d-none to make it visible.
-	-->
-    <section class="section section_gray section_newsletter d-none">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-
-                    <!-- Heading -->
-                    <h2 class="section__heading section_newsletter__heading text-center">
-                        Newsletter
-                    </h2>
-                    <p class="section__subheading text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam illo praesentium sequi in cum, beatae maiores quae qui.
-                    </p>
-
-                </div>
-            </div>
-            <!-- / .row -->
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-
-                    <!-- Form -->
-                    <form class="section_newsletter__form section_newsletter__form_clone">
-                        <div class="row">
-                            <div class="form-group col-md-9">
-                                <label class="sr-only">E-mail address</label>
-                                <input type="email" class="form-control" placeholder="Email address">
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <button type="submit" class="btn btn-primary">
-									Subscribe
-								</button>
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-            <!-- / .row -->
-        </div>
-        <!-- / .container -->
-    </section>
-
-    <!-- GALLERY
-	================================================== -->
-    <!-- <section class="section section_gallery">
-        <div class="container">
-            <div class="row">
-                <div class="col">
 
 
-                    <h2 class="section__heading text-center">
-                        Our gallery
-                    </h2>
-
-
-                    <p class="section__subheading text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    </p>
-
-                </div>
-            </div>
-
-            <div class="row section_gallery__grid">
-                <div class="col-6 col-sm-6 col-md-4 section_gallery__grid__item">
-
-                    <a href="assets/img/11.jpg" data-lightbox="gallery">
-                        <img src="assets/img/11.jpg" class="img-fluid" alt="...">
-                    </a>
-
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 section_gallery__grid__item">
-
-                    <a href="assets/img/16.jpg" data-lightbox="gallery">
-                        <img src="assets/img/16.jpg" class="img-fluid" alt="...">
-                    </a>
-
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 section_gallery__grid__item">
-
-                    <a href="assets/img/13.jpg" data-lightbox="gallery">
-                        <img src="assets/img/13.jpg" class="img-fluid" alt="...">
-                    </a>
-
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 section_gallery__grid__item">
-
-                    <a href="assets/img/15.jpg" data-lightbox="gallery">
-                        <img src="assets/img/15.jpg" class="img-fluid" alt="...">
-                    </a>
-
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 section_gallery__grid__item">
-
-                    <a href="assets/img/14.jpg" data-lightbox="gallery">
-                        <img src="assets/img/14.jpg" class="img-fluid" alt="...">
-                    </a>
-
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 section_gallery__grid__item">
-
-                    <a href="assets/img/18.jpg" data-lightbox="gallery">
-                        <img src="assets/img/18.jpg" class="img-fluid" alt="...">
-                    </a>
-
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 section_gallery__grid__item">
-
-                    <a href="assets/img/17.jpg" data-lightbox="gallery">
-                        <img src="assets/img/17.jpg" class="img-fluid" alt="...">
-                    </a>
-
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 section_gallery__grid__item">
-
-                    <a href="assets/img/12.jpg" data-lightbox="gallery">
-                        <img src="assets/img/12.jpg" class="img-fluid" alt="...">
-                    </a>
-
-                </div>
-            </div>
-
-        </div>
-
-    </section> -->
 
     <!-- MAP
 	================================================== -->
-    <section class="section section_map">
-        <div class="section_map__map" data-lat="40.7590403" data-lng="-74.0392713" data-zoom="12" data-info="<h4 class='section_map__map__heading text-center'>Touche restaurant</h4><p class='section_map__map__content text-center text-muted'>1234 Altschul, New York, NY 10027-0000<br>+1 987 654 3210</p>"></div>
+    <section class="section section_map ">
+        <div class="section_map__map " data-lat="40.7590403 " data-lng="-74.0392713 " data-zoom="12 " data-info="<h4 class='section_map__map__heading text-center'>Touche restaurant</h4>
+                                <p class='section_map__map__content text-center text-muted'>1234 Altschul, New York, NY 10027-0000<br>+1 987 654 3210</p>"></div>
     </section>
 
     <!-- FOOTER
