@@ -203,7 +203,7 @@
     <!-- login form maodal -->
     <div id="id01" class="modal">
         <div class="container">
-            <form class="modal-content animate form-group" action="/action_page.php">
+            <form class="modal-content animate form-group">
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                     <img src="img_avatar2.png" alt="Avatar" class="avatar">
@@ -217,7 +217,7 @@
                     <br>
 
 
-                    <button type="submit" class="btn btn-success">Login</button>
+                    <button type="button" class="btn btn-success" onclick="login_api()">Login</button>
                     <label>
                                       <input type="checkbox" checked="checked" name="remember"> Remember me
                                     </label>
@@ -247,7 +247,7 @@
     <!-- REGISTER FORM MODAL -->
     <div id="id02" class="modal">
         <div class="container">
-            <form class="modal-content animate form-group" action="/action_page.php">
+            <form class="modal-content animate form-group">
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                     <img src="img_avatar2.png" alt="Avatar" class="avatar">
@@ -255,13 +255,13 @@
 
                 <div class="container">
                     <label for="uname"><b>Mobile no:</b></label>
-                    <input type="tel" placeholder="Enter your contact number" id="tel" name="uname" class="form-control" pattern="[1-9]{1}[0-9]{9}" required>
+                    <input type="tel" placeholder="Enter your contact number" id="tele" name="uname" class="form-control" pattern="[1-9]{1}[0-9]{9}" required>
                     <span id="message"></span>
 
                     <label for="psw"><b>Email</b></label>
-                    <input type="email" placeholder="Enter email" name="psw" class="form-control" required>
+                    <input type="email" placeholder="Enter email" id="email" name="psw" class="form-control" required>
 
-                    <button type="submit" class="btn btn-success">Register</button>
+                    <button type="button" class="btn btn-success" onclick="register_api()">Register</button>
 
                 </div>
 
@@ -283,7 +283,62 @@
 
 
 
-    <!-- FOR MOBILE NUMBER VALIDATION -->
+    <!-- REGISTERING USER WITH API USING AJAX  -->
+    <script>
+        function register_api() {
+
+            var details = {};
+
+            details.uname = document.getElementById('email').value
+            details.psw = document.getElementById('tele').value
+
+
+            $.ajax({
+                url: "https://dq-login.herokuapp.com/users/register",
+                data: JSON.stringify(details),
+                type: "POST",
+                contentType: "application/json",
+
+            });
+
+            console.log(details);
+        }
+    </script>
+
+
+
+    <!-- LOGGING IN USER WITH API USING AJAX  -->
+    <script>
+        function login_api() {
+
+            var details = {};
+
+
+            details.psw = document.getElementById("tel").value
+
+            console.log(details);
+
+
+
+            $.ajax({
+                url: "https://dq-login.herokuapp.com/users/authenticate",
+                data: JSON.stringify(details),
+                type: "POST",
+                contentType: "application/json",
+                success: function(data) {
+                    console.log('success');
+                    console.log(data);
+                    // location.href = "www.facebook.com";
+
+
+                }
+            });
+
+
+            console.log("login api running");
+            console.log(details);
+        }
+    </script>
 
 
 
