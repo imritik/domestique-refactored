@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-<!-- Mirrored from simpleqode.bitbucket.io/touche/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Oct 2018 19:26:41 GMT -->
+<!-- Mirrored from simpleqode.bitbucket.io/touche/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Oct 2018 19:26:41 GMT -->
 
 <head>
     <meta charset="utf-8">
@@ -17,7 +17,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
     </script>
 
-    <title>DomestiQue | Domestic Service Provider</title>
+    <title>About | DomestiQue</title>
 
     <!-- CSS Plugins -->
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
@@ -30,13 +30,103 @@
 
     <!-- CSS Global -->
     <link rel="stylesheet" href="assets/css/theme.min.css">
-
-    <script>
-        $(function() {
-            // $("#header").load("header.html");
-            $("#footer").load("footer.html");
-        });
-    </script>
+    <style>
+        /* Full-width input fields */
+        
+        input[type=tel],
+        input[type=email] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            /* border: 1px solid #ccc; */
+            box-sizing: border-box;
+        }
+        /* Set a style for all buttons */
+        /* Extra styles for the cancel button */
+        
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+        
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+        
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        /* The Modal (background) */
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            padding-top: 60px;
+        }
+        /* Modal Content/Box */
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+        /* The Close Button (x) */
+        /* Add Zoom Animation */
+        
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+        
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+        
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+            to {
+                transform: scale(1)
+            }
+        }
+        /* Change styles for span and cancel button on extra small screens */
+        
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+        }
+    </style>
 
 </head>
 
@@ -52,8 +142,8 @@
 
             <!-- Navbar: Toggler -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <!-- Navbar: Collapse -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -73,8 +163,8 @@
 
                 <!-- Navbar: Brand -->
                 <a class="navbar-brand d-none d-lg-flex" href="index-2.html">
-						DomestiQue
-					</a>
+                    DomestiQue
+                </a>
 
                 <!-- Navbar navigation: Right -->
                 <ul class="navbar-nav ml-auto">
@@ -83,13 +173,24 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link cd-signin" id="nav-item__menu" aria-haspopup="true" data-toggle="modal" href="#tab" aria-expanded="false">
-								Login/Signup
-							</a>
+                        <a class="nav-link dropdown-toggle" id="nav-item__menu" data-toggle="dropdown" aria-haspopup="true" data-toggle="modal" aria-expanded="false" style="cursor:pointer">
+                            Login/Signup
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" style="cursor: pointer" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" style="cursor: pointer" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Signup</a>
+                            </li>
+                        </ul>
 
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://api.whatsapp.com/send?phone=919554864888&text=Hey%20i%20want%20to%20book%20a%20domestiQue%20service%20professional" target="blank">Book with Whatsapp &nbsp;<i class="fa fa-whatsapp" style="color:#25D366;font-size: 18px"></i></a>
+                    <li class=" nav-item">
+                        <a class="nav-link" href="https://api.whatsapp.com/send?phone=919554864888&text=Hey%20i%20want%20to%20book%20a%20domestiQue%20service%20professional " target="blank ">Book with Whatsapp &nbsp;
+                            <i class="fa fa-whatsapp" style="color:#25D366;font-size: 18px "></i>
+                        </a>
 
                     </li>
                 </ul>
@@ -98,56 +199,218 @@
             <!-- / .navbar-collapse -->
 
         </div>
-
-
-
-
     </nav>
     <!-- / .navbar -->
 
 
-    <!-- Modal -->
-    <div id="tab" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Modal Header</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-
+    <!-- login form maodal -->
+    <div id="id01" class="modal">
+        <div class="container ">
+            <form class="modal-content animate form-group">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById( 'id01').style.display='none' " style="margin-right:20px; " class="close " title="Close Modal ">&times;</span>
+                    <img src="assets/img/dq.jpeg" alt="Avatar" style="height:70px;width: 70px;" class="avatar ">
                 </div>
-                <div class="modal-body">
-                    <div class="container">
-
-
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
-                            <li><a data-toggle="tab" href="#menu1">Register</a></li>
-
-                        </ul>
-
-                        <div class="tab-content">
-                            <div id="home" class="tab-pane fade in active">
-                                <h3>HOME</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                            <div id="menu1" class="tab-pane fade">
-                                <h3>Menu 1</h3>
-                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-
-                        </div>
-                    </div>
+                <div>
+                    <span id="login_msg" style="color:forestgreen "></span>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                <div class="container ">
+
+                    <label for="uname">
+                        <b>Mobile no:</b>
+                    </label>
+                    <input type="tel" style="border-radius: 5px;" placeholder="Enter your contact number" id="tele" name="uname" class="form-control" pattern="[1-9]{1}[0-9]{9} " required>
+
+                    <br>
+                    <br>
+
+
+                    <button type="button" class="btn btn-success" onclick="login_api()">Login</button> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
                 </div>
-            </div>
+                <br>
+                <div class="container" style="padding:10px;background-color:#f1f1f1 ">
+
+                    <span class="psw">Forgot
+                        <a href="#">password?</a>
+                    </span>
+                </div>
+            </form>
         </div>
     </div>
 
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
+    <!-- REGISTER FORM MODAL -->
+    <div id="id02" class="modal ">
+        <div class="container ">
+            <form class="modal-content animate form-group ">
+                <div class="imgcontainer ">
+                    <span onclick="document.getElementById( 'id02').style.display='none' " style="margin-right:20px; " class="close " title="Close Modal ">&times;</span>
+                    <img src="assets/img/dq.jpeg " alt="Avatar " style="height:70px;width: 70px; " class="avatar ">
+                </div>
+                <div>
+                    <span id="register_msg" style="color:forestgreen "></span>
+                </div>
+                <div class="container">
+
+                    <label for="uname">
+                        <b>Mobile no:</b>
+                    </label>
+                    <input type="tel" style="border-radius: 5px; " placeholder="Enter your contact number" id="telep" name="uname" class="form-control " pattern="[1-9]{1}[0-9]{9} " required>
+                    <span id="message "></span>
+
+                    <label for="psw">
+                        <b>Email</b>
+                    </label>
+                    <input type="email" style="border-radius: 5px; " placeholder="Enter email " id="email" name="psw" class="form-control " required>
+
+                    <button type="button" class="btn btn-success " onclick="register_api()">Register</button>
+
+                    <br>
+                    <hr>
+                    <div id="otp_entered" style="display:none ">
+                        <label>Enter the OTP:</label>
+                        <input type="text" name="otp_entered" class="form_control" maxlength="4" id="otp_enter">
+                        <br>
+                        <button type="button" class="btn btn-primary" onclick="otp_api()">Submit</button>
+                    </div>
+                    <br>
+
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id02');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
+
+    <!-- REGISTERING USER WITH API USING AJAX  -->
+    <script>
+        // HERE WE GENERATE OTP FOR NEW USER
+        var otp_send = Math.floor(1000 + Math.random() * 9000);
+        console.log(otp_send);
+
+        function register_api() {
+
+            console.log(otp_send);
+
+            $('#otp_entered').show();
+
+
+            // HERE WE HAVE TO SEND OTP TO USER
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+        // AFTER USER HAS ENTERED OTP THEN SEND TO API
+        function otp_api() {
+
+
+            var details = {};
+
+            details.uname = document.getElementById('email').value
+            details.psw = document.getElementById('telep').value
+
+
+
+
+            details.otp_send = otp_send;
+
+
+            details.otp_entered = document.getElementById('otp_enter').value
+
+
+            $.ajax({
+                url: "https://dq-login.herokuapp.com/users/register",
+                data: JSON.stringify(details),
+                type: "POST",
+                contentType: "application/json"
+
+            });
+
+            console.log(details);
+        }
+    </script>
+
+
+
+    <!-- LOGGING IN USER WITH API USING AJAX  -->
+    <script>
+        function login_api() {
+
+            var details = {};
+
+
+            details.psw = document.getElementById("tele").value
+
+            console.log(details);
+
+
+
+            $.ajax({
+                url: "https://dq-login.herokuapp.com/users/authenticate",
+                data: JSON.stringify(details),
+                type: "POST",
+                contentType: "application/json",
+                success: function(data) {
+                    console.log('success');
+                    console.log(data);
+                    document.getElementById('login_msg').innerHTML = "You are logged in "
+                        // location.href = "www.facebook.com ";
+
+
+                }
+            });
+
+
+            console.log("login api running ");
+            console.log(details);
+        }
+    </script>
+
+
+
+
+
     <!-- HEADER
 	================================================== -->
-    <section class="section section_header" data-parallax="scroll" data-image-src="assets/img/36.jpg">
+    <section class="section section_header" data-parallax="scroll" data-image-src="assets/img/about-us.jpg">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -173,7 +436,7 @@
 
                     <!-- Description -->
                     <p class="section_discover__description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Get instant access to instant and reliable services.
                     </p>
 
                 </div>
@@ -216,10 +479,10 @@
                     <!-- Blockquote -->
                     <blockquote class="section_quote__blockquote">
                         <p class="text-center">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ab nobis cupiditate odit repudiandae maiores in et autem voluptate cum.
+                            "There is a spiritual aspect to our lives — when we give, we receive — when a business does something good for somebody, that somebody feels good about them!"
                         </p>
                         <footer class="text-center">
-                            George Bernard Shaw
+                            - Ben Cohen, Co-Founder Ben & Jerry's
                         </footer>
                     </blockquote>
 
@@ -246,7 +509,7 @@
                 <div class="col-sm-4">
 
                     <!-- About Us -->
-                    <h5 class="section_footer__heading">
+                    <h5 class="section_footer__heading" style="color:white">
                         About Us
                     </h5>
                     <p>
@@ -257,7 +520,7 @@
                 <div class="col-sm-4">
 
                     <!-- Contact info -->
-                    <h5 class="section_footer__heading">
+                    <h5 class="section_footer__heading" style="color:white">
                         Contact info
                     </h5>
                     <ul class="section_footer__info">
@@ -268,10 +531,12 @@
                             <i class="fa fa-phone"></i> +91 95548-64888, +91 96489-20115
                         </li>
                         <li>
-                            <i class="fa fa-envelope-o"></i> <a href="mailto:admin@domain.com">domestique88@gmail.com</a>
+                            <i class="fa fa-envelope-o"></i>
+                            <a href="mailto:admin@domain.com">domestique88@gmail.com</a>
                         </li>
                         <li>
-                            <i class="fa fa-asterisk"></i><a href="#">Terms & Conditions</a>
+                            <i class="fa fa-asterisk"></i>
+                            <a href="tandc.html" target="blank">Terms & Conditions</a>
                         </li>
                     </ul>
 
@@ -279,7 +544,7 @@
                 <div class="col-sm-4">
 
                     <!-- Opening hours -->
-                    <h5 class="section_footer__heading">
+                    <h5 class="section_footer__heading" style="color:white">
                         Opening hours
                     </h5>
                     <div class="section_footer__open">
@@ -299,7 +564,8 @@
 
                     <!-- Copyright -->
                     <div class="section_footer__copyright">
-                        <i class="fa fa-copyright"></i> <span id="js-current-year"></span> DomestiQue. All rights reserved.
+                        <i class="fa fa-copyright"></i>
+                        <span id="js-current-year"></span> DomestiQue. All rights reserved.
                     </div>
 
                 </div>
@@ -307,8 +573,8 @@
             <!-- / .row -->
         </div>
         <!-- / .container -->
-
     </footer>
+
 
     <!-- JAVASCRIPT
 	================================================== -->

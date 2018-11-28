@@ -17,7 +17,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
     </script>
 
-    <title>DomestiQue | Domestic Service Provider</title>
+    <title>DomestiQue | Domestic Service Marketplace</title>
 
     <!-- CSS Plugins -->
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
@@ -144,8 +144,8 @@
 
             <!-- Navbar: Toggler -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <!-- Navbar: Collapse -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -165,8 +165,8 @@
 
                 <!-- Navbar: Brand -->
                 <a class="navbar-brand d-none d-lg-flex" href="index-2.html">
-					DomestiQue
-				</a>
+                    DomestiQue
+                </a>
 
                 <!-- Navbar navigation: Right -->
                 <ul class="navbar-nav ml-auto">
@@ -176,18 +176,23 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="nav-item__menu" data-toggle="dropdown" aria-haspopup="true" data-toggle="modal" aria-expanded="false" style="cursor:pointer">
-							Login/Signup<span class="caret"></span>
+                            Login/Signup
+                            <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" style="background:transparent">
-                            <li><a style="color:#990033;" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" style="cursor: pointer" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
                             </li>
-                            <li><a onclick="document.getElementById('id02').style.display='block'" style="width:auto;" style="color:#990033 ">Signup</a> </li>
+                            <li>
+                                <a class="dropdown-item" style="cursor: pointer" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Signup</a>
+                            </li>
                         </ul>
 
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link " href="https://api.whatsapp.com/send?phone=919554864888&text=Hey%20i%20want%20to%20book%20a%20domestiQue%20service%20professional " target="blank ">Book with Whatsapp &nbsp;<i class="fa fa-whatsapp
-                                " style="color:#25D366;font-size: 18px "></i></a>
+                    <li class=" nav-item">
+                        <a class="nav-link" href="https://api.whatsapp.com/send?phone=919554864888&text=Hey%20i%20want%20to%20book%20a%20domestiQue%20service%20professional " target="blank ">Book with Whatsapp &nbsp;
+                            <i class="fa fa-whatsapp" style="color:#25D366;font-size: 18px "></i>
+                        </a>
 
                     </li>
                 </ul>
@@ -202,32 +207,38 @@
 
     <!-- login form maodal -->
     <div id="id01" class="modal">
-        <div class="container">
+        <div class="container ">
             <form class="modal-content animate form-group">
                 <div class="imgcontainer">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                    <span onclick="document.getElementById( 'id01').style.display='none' " style="margin-right:20px; " class="close " title="Close Modal ">&times;</span>
+                    <img src="assets/img/dq.jpeg" alt="Avatar" style="height:70px;width: 70px;" class="avatar ">
                 </div>
-                <div><span id="login_msg" style="color:forestgreen"></span></div>
+                <div>
+                    <span id="login_msg" style="color:forestgreen "></span>
+                </div>
 
-                <div class="container">
+                <div class="container ">
 
-                    <label for="uname"><b>Mobile no:</b></label>
-                    <input type="tel" placeholder="Enter your contact number" id="tele" name="uname" class="form-control" pattern="[1-9]{1}[0-9]{9}" required>
+                    <label for="uname">
+                        <b>Mobile no:</b>
+                    </label>
+                    <input type="tel" style="border-radius: 5px;" placeholder="Enter your contact number" id="tele" name="uname" class="form-control" pattern="[1-9]{1}[0-9]{9} " required>
 
                     <br>
                     <br>
 
 
-                    <button type="button" class="btn btn-success" onclick="login_api()">Login</button>
+                    <button type="button" class="btn btn-success" onclick="login_api()">Login</button> &nbsp;&nbsp;&nbsp;
                     <label>
-                                      <input type="checkbox" checked="checked" name="remember"> Remember me
-                                    </label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
                 </div>
+                <br>
+                <div class="container" style="padding:10px;background-color:#f1f1f1 ">
 
-                <div class="container" style="background-color:#f1f1f1">
-
-                    <span class="psw">Forgot <a href="#">password?</a></span>
+                    <span class="psw">Forgot
+                        <a href="#">password?</a>
+                    </span>
                 </div>
             </form>
         </div>
@@ -247,30 +258,39 @@
 
 
     <!-- REGISTER FORM MODAL -->
-    <div id="id02" class="modal">
-        <div class="container">
-            <form class="modal-content animate form-group">
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    <div id="id02" class="modal ">
+        <div class="container ">
+            <form class="modal-content animate form-group ">
+                <div class="imgcontainer ">
+                    <span onclick="document.getElementById( 'id02').style.display='none' " style="margin-right:20px; " class="close " title="Close Modal ">&times;</span>
+                    <img src="assets/img/dq.jpeg " alt="Avatar " style="height:70px;width: 70px; " class="avatar ">
                 </div>
-                <div><span id="register_msg" style="color:forestgreen"></span></div>
+                <div>
+                    <span id="register_msg" style="color:forestgreen "></span>
+                </div>
                 <div class="container">
 
-                    <label for="uname"><b>Mobile no:</b></label>
-                    <input type="tel" placeholder="Enter your contact number" id="telep" name="uname" class="form-control" pattern="[1-9]{1}[0-9]{9}" required>
-                    <span id="message"></span>
+                    <label for="uname">
+                        <b>Mobile no:</b>
+                    </label>
+                    <input type="tel" style="border-radius: 5px; " placeholder="Enter your contact number" id="telep" name="uname" class="form-control " pattern="[1-9]{1}[0-9]{9} " required>
+                    <span id="message "></span>
 
-                    <label for="psw"><b>Email</b></label>
-                    <input type="email" placeholder="Enter email" id="email" name="psw" class="form-control" required>
+                    <label for="psw">
+                        <b>Email</b>
+                    </label>
+                    <input type="email" style="border-radius: 5px; " placeholder="Enter email " id="email" name="psw" class="form-control " required>
 
-                    <button type="button" class="btn btn-success" onclick="register_api()">Register</button>
+                    <button type="button" class="btn btn-success " onclick="register_api()">Register</button>
 
-
-                    <div id="otp_entered" style="display:none">
+                    <br>
+                    <hr>
+                    <div id="otp_entered" style="display:none ">
                         <label>Enter the OTP:</label>
-                        <input type="text" name="otp_entered" class="form_control" id="otp_enter">
-                        <button type="button" class="btn btn-primary" onclick="otp_api()">Submit</button> </div>
+                        <input type="text" name="otp_entered" class="form_control" maxlength="4" id="otp_enter">
+                        <br>
+                        <button type="button" class="btn btn-primary" onclick="otp_api()">Submit</button>
+                    </div>
                     <br>
 
                 </div>
@@ -412,10 +432,10 @@
                         </p> -->
 
                         <!-- Button -->
-                        <div class="text-center ">
-                            <a id="book_now_button " class="btn btn-primary text-white " onclick="dq_book() ">
-								Book Now!
-							</a>
+                        <div class="text-center">
+                            <a id="book_now_button" class="btn btn-primary text-white" onclick="dq_book()">
+                                Book Now!
+                            </a>
                         </div>
 
                     </div>
@@ -430,7 +450,7 @@
         <!-- BOOK NOW FORM CALLING-->
         <script>
             function dq_book() {
-                window.location.assign("https://dq-booking.herokuapp.com ");
+                window.location.assign("https://dq-booking.herokuapp.com");
             }
         </script>
 
@@ -451,12 +471,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.facebook.com/domestique88 " target="blank ">
+                                <a href="https://www.facebook.com/domestique88" target="blank ">
                                     <i class="fa fa-facebook "></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/official_domestique " target="blank ">
+                                <a href="https://www.instagram.com/official_domestique" target="blank ">
                                     <i class="fa fa-instagram "></i>
                                 </a>
                             </li>
@@ -505,7 +525,7 @@
                     <!-- Content -->
                     <h2>High Quality & Trusted Professionals</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias veritatis nisi, consequatur, laborum libero a neque ducimus. Porro rem illum quo nostrum quisquam asperiores, blanditiis, consectetur. Possimus facilis velit, voluptatibus!
+                        Fully Trained professionals in their respective field with Amiable, Compassionate and Empathic quality MVP's ready to serve you at your doorstep!
                     </p>
 
                 </div>
@@ -541,7 +561,7 @@
                     <!-- Content -->
                     <h2>Multiple Services With Right Budget</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quae similique asperiores consequatur! Nihil temporibus qui enim, ab voluptates corporis commodi eum maxime. Accusamus voluptates a, et quidem! Quo, et?
+                        You can choose multiple services at a single time. As your time and convenience and time is our first priority.
                     </p>
 
                 </div>
@@ -576,7 +596,7 @@
                     <!-- Content -->
                     <h2>Serving You </h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias veritatis nisi, consequatur, laborum libero a neque ducimus. Porro rem illum quo nostrum quisquam asperiores, blanditiis, consectetur. Possimus facilis velit, voluptatibus!
+                        Get details of your serviceperson along with booking and an OTP before starting your service as security and authenticity is as important as quality!
                     </p>
 
                 </div>
@@ -611,7 +631,7 @@
                     <!-- Content -->
                     <h2>Hustle Free Service</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quae similique asperiores consequatur! Nihil temporibus qui enim, ab voluptates corporis commodi eum maxime. Accusamus voluptates a, et quidem! Quo, et?
+                        Easy and hassle-free payments with a bill because you have the right to know what you are paying for!
                     </p>
 
                 </div>
@@ -623,16 +643,17 @@
 
     <!-- ABOUT
 	================================================== -->
-    <section class="section section_about ">
-        <div class="container ">
-            <div class="row ">
+    <section class="section section_about">
+        <div class="container">
+            <div class="row">
                 <div class="col-md-4 ">
 
                     <!-- Description -->
-                    <p class="section_about__description ">
+                    <p class="section_about__description">
                         GET THE SERVICE YOU WANT, WITH JUST A FEW CLICKS ON YOUR PHONE.
                     </p>
-                    <p class="section_about__description ">We are dedicated to giving you the very best of our services with the focus on clarity, uniqueness, and reliability</p>
+                    <p class="section_about__description">We are dedicated to giving you the very best of our services with the focus on clarity, uniqueness, and reliability
+                    </p>
 
                 </div>
             </div>
@@ -649,342 +670,341 @@
                 <div class="col ">
 
                     <!-- Heading -->
-                    <h2 class="section__heading text-center ">
+                    <h2 class="section__heading text-center">
                         Our Pricing
                     </h2>
-                    <p class="section__subheading text-center ">
+                    <p class="section__subheading text-center">
 
                     </p>
 
                 </div>
             </div>
             <!-- / .row -->
-            <div class="row ">
-                <div class="col ">
+            <div class="row">
+                <div class="col">
 
                     <!-- Navigation -->
-                    <nav class="section_menu__nav ">
+                    <nav class="section_menu__nav">
                         <ul>
-                            <li class="active ">
-                                <a href="#menu_images " data-filter=".mains ">Plumber</a>
+                            <li class="active">
+                                <a href="#menu_images" data-filter=".mains">Plumber</a>
                             </li>
                             <li>
-                                <a href="#menu_images " data-filter=".lunch ">Beautician</a>
+                                <a href="#menu_images" data-filter=".lunch">Beautician</a>
                             </li>
                             <li>
-                                <a href="#menu_images " data-filter=".dinner ">Electrician</a>
+                                <a href="#menu_images" data-filter=".dinner ">Electrician</a>
                             </li>
                             <li>
-                                <a href="#menu_images " data-filter=".drinks ">Photographers</a>
+                                <a href="#menu_images" data-filter=".drinks">Photographers</a>
                             </li>
                         </ul>
                     </nav>
 
                 </div>
             </div>
-            <div class="row section_menu__grid " id="menu_images ">
+            <div class="row section_menu__grid" id="menu_images">
 
-                <div class="col-md-12 section_menu__grid__item mains ">
-                    <!-- Card -->
-                    <div class="card card-image " style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg); ">
 
-                        <!-- Content -->
-                        <div class="rgba-black-strong py-5 px-4 ">
-                            <div class="row d-flex justify-content-center ">
+                <!-- <div class="col-md-12 section_menu__grid__item mains">
+                   
+                    <div class="card card-image">
+
+                       
+                        <div class="rgba-black-strong py-5 px-4">
+                            <div class="row d-flex justify-content-center">
                                 <div class="col-md-10 col-xl-8 ">
 
-                                    <!--Accordion wrapper-->
-                                    <div class="accordion md-accordion accordion-5 " id="accordionEx5 " role="tablist " aria-multiselectable="true ">
+                                    
+                                    <div class="accordion md-accordion accordion-5" id="accordionEx5" role="tablist" aria-multiselectable="true ">
 
 
 
-                                        <!-- Accordion card -->
-                                        <div class="card mb-4 ">
+                                        
+                                        <div class="card mb-4">
 
-                                            <!-- Card header -->
-                                            <div class="card-header p-0 z-depth-1 " role="tab " id="heading32 ">
-                                                <a data-toggle="collapse " data-parent="#accordionEx5 " href="#collapse32 " aria-expanded="true " aria-controls="collapse32 ">
-                                                    <i class="fa fa-cogs fa-2x p-3 mr-4 float-left black-text " aria-hidden="true "></i>
+                                           
+                                            <div class="card-header p-0 z-depth-1" role="tab" id="heading32">
+                                                <a data-toggle="collapse" data-parent="#accordionEx5" href="#collapse32" aria-expanded="true" aria-controls="collapse32"> <i class="fa fa-cogs fa-2x p-3 mr-4 float-left black-text" aria-hidden="true "></i>
                                                     <h4 class="text-uppercase white-text mb-0 py-3 mt-1 ">
                                                         Item #3
                                                     </h4>
                                                 </a>
-                                            </div>
+                                            </div> -->
 
-                                            <!-- Card body -->
-                                            <div id="collapse32 " class="collapse " role="tabpanel " aria-labelledby="heading32 " data-parent="#accordionEx5 ">
-                                                <div class="card-body rgba-black-light white-text z-depth-1 ">
-                                                    <div class="table-responsive ">
-                                                        <div class="bs-example ">
-                                                            <table class="table table-bordered ">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th style="text-align:center ">Subcategory</th>
-                                                                        <th style="text-align:center ">Activity</th>
-                                                                        <th>Unit</th>
-                                                                        <th style="text-align:center ">Price</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td> Ball Cock Fixing</td>
-                                                                        <td> Ball Cock Fixing</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 200</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Cleaning Of Bottle Trap</td>
-                                                                        <td> Cleaning Of Bottle Trap</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 200</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Installation</td>
-                                                                        <td> Shower Fitting</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 300</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Installation</td>
-                                                                        <td> Gali Trap Fitting</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> Upon Inspection</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Installation</td>
-                                                                        <td> Tap Washer / Jumper</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 150</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Installation</td>
-                                                                        <td> Jet Installation</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 300</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Installation</td>
-                                                                        <td> Wash Basin - Installation</td>
-                                                                        <td style="text-align:center "> Simple & Regular</td>
-                                                                        <td style="text-align:center "> ₹ 500</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Installation</td>
-                                                                        <td> Wash Basin - Installation - Fancy</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> ₹ 900</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Installation</td>
-                                                                        <td> Water Tank Installation</td>
-                                                                        <td style="text-align:center ">
-                                                                            <=500 Litre</td>
-                                                                                <td style="text-align:center "> ₹ 1,500</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Installtion</td>
-                                                                        <td> Bathtub Installation</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> ₹ 2000</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Jacuzzi</td>
-                                                                        <td> Jacuzzi Servicing</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> Upon Inspection</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Jacuzzi</td>
-                                                                        <td> Jacuzzi Installation</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> ₹ 3000</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Jacuzzi</td>
-                                                                        <td> Jacuzzi Uninstallation</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> ₹ 2500</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Leakage & Water Blockage</td>
-                                                                        <td> Leakage Repair</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> Upon Inspection</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Leakage & Water Blockage</td>
-                                                                        <td> Water Blockage - To Be Cleaned With Pressure Machine</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> Upon Inspection</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Leakage & Water Blockage</td>
-                                                                        <td> Repairing Closet Bend Leakage</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> Upon Inspection</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Pipe Extension</td>
-                                                                        <td> Pipe Extension</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> Upon Inspection</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> PVC</td>
-                                                                        <td> Pipe Fitting</td>
-                                                                        <td style="text-align:center "> 4 Inch</td>
-                                                                        <td style="text-align:center "> Upon Inspection</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> PVC</td>
-                                                                        <td> Pipe Fitting</td>
-                                                                        <td style="text-align:center "> 3 Inch</td>
-                                                                        <td style="text-align:center "> Upon Inspection</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> PVC</td>
-                                                                        <td> Connection Washer Change</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 150</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Wash Basin</td>
-                                                                        <td> Removal</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 200</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Western Commode</td>
-                                                                        <td> Double Siphon</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> ₹ 2000</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Western Commode</td>
-                                                                        <td> Single Siphon</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> ₹ 1500</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Western Commode</td>
-                                                                        <td> Wall Hanging</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> ₹ 2500</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Western Commode</td>
-                                                                        <td> Cover Fitting</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> ₹ 300</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Western Commode</td>
-                                                                        <td> Removal</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> ₹ 500</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Pipeline Fixing</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> Upon Inspection</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Cleaning Of Nani Trap</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 300</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Jet Repair</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 200</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Tank With Pipe Fittings</td>
-                                                                        <td style="text-align:center "> 1 Inch</td>
-                                                                        <td style="text-align:center "> Upon Inspection</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Tap/Faucet Cleaning</td>
-                                                                        <td style="text-align:center "> 1</td>
-                                                                        <td style="text-align:center "> ₹ 100</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Mirror Fixing</td>
-                                                                        <td style="text-align:center "> Less Than 2 Ft</td>
-                                                                        <td style="text-align:center "> ₹ 200</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Angle Cock</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> ₹ 300</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Replacement Of Waste Pipe</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 200</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Soap Dish / Dispenser / Toilet Paper Holder</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 150</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> White Cement Application</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> Upon Inspection</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Rain Water Outlet</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> Upon Inspection</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Wall Mixer</td>
-                                                                        <td style="text-align:center "> </td>
-                                                                        <td style="text-align:center "> ₹ 300</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Replacement Of Closet Bend</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 200</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> Others</td>
-                                                                        <td> Bathtub Removal</td>
-                                                                        <td style="text-align:center "> One</td>
-                                                                        <td style="text-align:center "> ₹ 1500</td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Accordion card -->
-                                    </div>
-                                    <!--/.Accordion wrapper-->
-
-                                </div>
+                <!-- 
+                <div id="collapse32" role="tabpanel" aria-labelledby="heading32" data-parent="#accordionEx5">
+                    <div class="card-body rgba-black-light white-text z-depth-1">
+                        <div class="table-responsive">
+                            <div class="bs-example">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:center ">Subcategory</th>
+                                            <th style="text-align:center ">Activity</th>
+                                            <th>Unit</th>
+                                            <th style="text-align:center ">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> Ball Cock Fixing</td>
+                                            <td> Ball Cock Fixing</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 200</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Cleaning Of Bottle Trap</td>
+                                            <td> Cleaning Of Bottle Trap</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 200</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Installation</td>
+                                            <td> Shower Fitting</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 300</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Installation</td>
+                                            <td> Gali Trap Fitting</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> Upon Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Installation</td>
+                                            <td> Tap Washer / Jumper</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 150</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Installation</td>
+                                            <td> Jet Installation</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 300</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Installation</td>
+                                            <td> Wash Basin - Installation</td>
+                                            <td style="text-align:center "> Simple & Regular</td>
+                                            <td style="text-align:center "> ₹ 500</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Installation</td>
+                                            <td> Wash Basin - Installation - Fancy</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> ₹ 900</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Installation</td>
+                                            <td> Water Tank Installation</td>
+                                            <td style="text-align:center ">
+                                                <=500 Litre</td>
+                                                    <td style="text-align:center "> ₹ 1,500</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Installtion</td>
+                                            <td> Bathtub Installation</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> ₹ 2000</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Jacuzzi</td>
+                                            <td> Jacuzzi Servicing</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> Upon Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Jacuzzi</td>
+                                            <td> Jacuzzi Installation</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> ₹ 3000</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Jacuzzi</td>
+                                            <td> Jacuzzi Uninstallation</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> ₹ 2500</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Leakage & Water Blockage</td>
+                                            <td> Leakage Repair</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> Upon Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Leakage & Water Blockage</td>
+                                            <td> Water Blockage - To Be Cleaned With Pressure Machine</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> Upon Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Leakage & Water Blockage</td>
+                                            <td> Repairing Closet Bend Leakage</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> Upon Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Pipe Extension</td>
+                                            <td> Pipe Extension</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> Upon Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td> PVC</td>
+                                            <td> Pipe Fitting</td>
+                                            <td style="text-align:center "> 4 Inch</td>
+                                            <td style="text-align:center "> Upon Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td> PVC</td>
+                                            <td> Pipe Fitting</td>
+                                            <td style="text-align:center "> 3 Inch</td>
+                                            <td style="text-align:center "> Upon Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td> PVC</td>
+                                            <td> Connection Washer Change</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 150</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Wash Basin</td>
+                                            <td> Removal</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 200</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Western Commode</td>
+                                            <td> Double Siphon</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> ₹ 2000</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Western Commode</td>
+                                            <td> Single Siphon</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> ₹ 1500</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Western Commode</td>
+                                            <td> Wall Hanging</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> ₹ 2500</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Western Commode</td>
+                                            <td> Cover Fitting</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> ₹ 300</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Western Commode</td>
+                                            <td> Removal</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> ₹ 500</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Pipeline Fixing</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> Upon Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Cleaning Of Nani Trap</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 300</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Jet Repair</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 200</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Tank With Pipe Fittings</td>
+                                            <td style="text-align:center "> 1 Inch</td>
+                                            <td style="text-align:center "> Upon Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Tap/Faucet Cleaning</td>
+                                            <td style="text-align:center "> 1</td>
+                                            <td style="text-align:center "> ₹ 100</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Mirror Fixing</td>
+                                            <td style="text-align:center "> Less Than 2 Ft</td>
+                                            <td style="text-align:center "> ₹ 200</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Angle Cock</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> ₹ 300</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Replacement Of Waste Pipe</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 200</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Soap Dish / Dispenser / Toilet Paper Holder</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 150</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> White Cement Application</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> Upon Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Rain Water Outlet</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> Upon Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Wall Mixer</td>
+                                            <td style="text-align:center "> </td>
+                                            <td style="text-align:center "> ₹ 300</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Replacement Of Closet Bend</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 200</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Others</td>
+                                            <td> Bathtub Removal</td>
+                                            <td style="text-align:center "> One</td>
+                                            <td style="text-align:center "> ₹ 1500</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        <!-- Content -->
                     </div>
-                    <!-- Card -->
-                </div>
+                </div> -->
+                <!-- </div>
+
+        </div>
+
+        </div>
+        </div>
+        </div>
+
+        </div>
+
+        </div> -->
 
                 <div class="col-md-12 section_menu__grid__item drinks ">
                     <!-- Card -->
@@ -1079,7 +1099,7 @@
                 </div>
                 <div class="col-md-12 section_menu__grid__item dinner ">
                     <!-- Card -->
-                    <div class="card card-image " style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg); ">
+                    <div class="card card-image">
 
                         <!-- Content -->
                         <div class="rgba-black-strong py-5 px-4 ">
@@ -1277,7 +1297,7 @@
 
     <!-- DISHES
 	================================================== -->
-    <section class="section section_dishes ">
+    <section class="section section_dishes">
 
         <!-- Header -->
         <div class="container ">
@@ -1303,7 +1323,7 @@
             <div class="section_dishes__carousel__item ">
 
                 <!-- Image -->
-                <img src="assets/img/26.jpg " alt="... " class="section_dishes__carousel__item__img ">
+                <img src="assets/img/appliance.jpg " alt="... " class="section_dishes__carousel__item__img ">
 
                 <!-- Body -->
                 <div class="section_dishes__carousel__item__body ">
@@ -1316,7 +1336,7 @@
             <div class="section_dishes__carousel__item ">
 
                 <!-- Image -->
-                <img src="assets/img/27.jpg " alt="... " class="section_dishes__carousel__item__img ">
+                <img src="assets/img/home.jpg " alt="... " class="section_dishes__carousel__item__img ">
 
                 <!-- Body -->
                 <div class="section_dishes__carousel__item__body ">
@@ -1329,7 +1349,7 @@
             <div class="section_dishes__carousel__item ">
 
                 <!-- Image -->
-                <img src="assets/img/28.jpg " alt="... " class="section_dishes__carousel__item__img ">
+                <img src="assets/img/shifting.jpg " alt="... " class="section_dishes__carousel__item__img ">
 
                 <!-- Body -->
                 <div class="section_dishes__carousel__item__body ">
@@ -1342,7 +1362,7 @@
             <div class="section_dishes__carousel__item ">
 
                 <!-- Image -->
-                <img src="assets/img/29.jpg " alt="... " class="section_dishes__carousel__item__img ">
+                <img src="assets/img/photo.jpg " alt="... " class="section_dishes__carousel__item__img ">
 
                 <!-- Body -->
                 <div class="section_dishes__carousel__item__body ">
@@ -1355,7 +1375,7 @@
             <div class="section_dishes__carousel__item ">
 
                 <!-- Image -->
-                <img src="assets/img/30.jpg " alt="... " class="section_dishes__carousel__item__img ">
+                <img src="assets/img/beautician.jpg " alt="... " class="section_dishes__carousel__item__img ">
 
                 <!-- Body -->
                 <div class="section_dishes__carousel__item__body ">
@@ -1368,7 +1388,7 @@
             <div class="section_dishes__carousel__item ">
 
                 <!-- Image -->
-                <img src="assets/img/31.jpg " alt="... " class="section_dishes__carousel__item__img ">
+                <img src="assets/img/painter.jpg " alt="... " class="section_dishes__carousel__item__img ">
 
                 <!-- Body -->
                 <div class="section_dishes__carousel__item__body ">
@@ -1531,8 +1551,9 @@
 
                             <div class="clear col-md-12 text-center ">
                                 <button type="submit " class="btn btn-primary " id="mc-embedded-subscribe ">
-									<a href="https://api.whatsapp.com/send?phone=919554864888&text=Hey%20i%20want%20to%20join%20domestique%20as%20a%20service%20expert%20 " target="blank ">	Join Now</a>
-									</button>
+                                    <a href="https://api.whatsapp.com/send?phone=919554864888&text=Hey%20i%20want%20to%20join%20domestique%20as%20a%20service%20expert%20 "
+                                        target="blank "> Join Now</a>
+                                </button>
                             </div>
                         </div>
 
@@ -1553,7 +1574,7 @@
 	================================================== -->
     <section class="section section_map ">
         <div class="section_map__map " data-lat="40.7590403 " data-lng="-74.0392713 " data-zoom="12 " data-info="<h4 class='section_map__map__heading text-center'>Touche restaurant</h4>
-                        <p class='section_map__map__content text-center text-muted'>1234 Altschul, New York, NY 10027-0000<br>+1 987 654 3210</p>"></div>
+                                <p class='section_map__map__content text-center text-muted'>1234 Altschul, New York, NY 10027-0000<br>+1 987 654 3210</p>"></div>
     </section>
 
     <!-- FOOTER
@@ -1564,7 +1585,7 @@
                 <div class="col-sm-4">
 
                     <!-- About Us -->
-                    <h5 class="section_footer__heading">
+                    <h5 class="section_footer__heading" style="color:white">
                         About Us
                     </h5>
                     <p>
@@ -1575,7 +1596,7 @@
                 <div class="col-sm-4">
 
                     <!-- Contact info -->
-                    <h5 class="section_footer__heading">
+                    <h5 class="section_footer__heading" style="color:white">
                         Contact info
                     </h5>
                     <ul class="section_footer__info">
@@ -1586,10 +1607,12 @@
                             <i class="fa fa-phone"></i> +91 95548-64888, +91 96489-20115
                         </li>
                         <li>
-                            <i class="fa fa-envelope-o"></i> <a href="mailto:admin@domain.com">domestique88@gmail.com</a>
+                            <i class="fa fa-envelope-o"></i>
+                            <a href="mailto:admin@domain.com">domestique88@gmail.com</a>
                         </li>
                         <li>
-                            <i class="fa fa-asterisk"></i><a href="#">Terms & Conditions</a>
+                            <i class="fa fa-asterisk"></i>
+                            <a href="tandc.html" target="blank">Terms & Conditions</a>
                         </li>
                     </ul>
 
@@ -1597,7 +1620,7 @@
                 <div class="col-sm-4">
 
                     <!-- Opening hours -->
-                    <h5 class="section_footer__heading">
+                    <h5 class="section_footer__heading" style="color:white">
                         Opening hours
                     </h5>
                     <div class="section_footer__open">
@@ -1617,7 +1640,8 @@
 
                     <!-- Copyright -->
                     <div class="section_footer__copyright">
-                        <i class="fa fa-copyright"></i> <span id="js-current-year"></span> DomestiQue. All rights reserved.
+                        <i class="fa fa-copyright"></i>
+                        <span id="js-current-year"></span> DomestiQue. All rights reserved.
                     </div>
 
                 </div>
@@ -1627,10 +1651,25 @@
         <!-- / .container -->
     </footer>
 
+
+
+
+
+
+
+
     <!-- JAVASCRIPT
 	================================================== -->
 
     <!-- MODAL JAVASCRIPT======================= -->
+
+    <script>
+        $('#accordionEx5').on('show hide', function() {
+            $(this).css('height', 'auto');
+        });
+    </script>
+
+
     <script>
         jQuery(document).ready(function($) {
             var $form_modal = $('.cd-user-modal'),
@@ -1803,6 +1842,6 @@
 
 </body>
 
-<!-- Mirrored from simpleqode.bitbucket.io/touche/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Oct 2018 19:26:41 GMT -->
+
 
 </html>
