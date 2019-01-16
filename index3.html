@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     <title>DomestiQue|Booking</title>
 
@@ -52,7 +53,10 @@
             </div>
 
             <div class="sidebar-header">
-                <h3>DomestiQue</h3>
+                <!-- <h2>DomestiQue</h2> -->
+                <a href="#" style="margin-left:-20px">
+                    <img src="assets/img/s.png" alt="Logo" style="width:100px;">
+                </a>
             </div>
             <hr>
 
@@ -108,10 +112,11 @@
                                  </i>
                             
                         </button>
+
             </div>
 
             <div class="col-md-7 col-sm-8 col-xs-10">
-                <h1 style="color:white;margin-top:9px;font-weight: 550;margin-left: -9px"><a href=""> DomestiQue</a></h1>
+                <h1 style="color:white;margin-top:9px;font-weight: 550;width: 80px;margin-left: -9px"><a href=""> DomestiQue</a></h1>
             </div>
 
 
@@ -149,7 +154,7 @@
                     setTimeout(real(), 3000);
                 });
 
-
+                swal("Alert", "Please use 'NEXT' and 'BACK' button to navigate", "info")
             });
 
             function real() {
