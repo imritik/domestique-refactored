@@ -185,6 +185,7 @@
             
 //             =====
              $(document).keydown(function(event) {
+                  document.addEventListener('contextmenu', event => event.preventDefault());
             if (event.keyCode == 123) { // Prevent F12
                 
                 return false;
