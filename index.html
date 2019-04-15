@@ -20,14 +20,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="F_q23KUtHEXJu7NE5kGgVlPZEJnTZGMULptatVUcBNM" />
-    <meta name="description" content="A domestic service provider, which provides Carpenter, Electrician, Plumber, AC Repair, Appliances Repair, Computer Repair & Sofa Cleaning at customer's residence within minimum time">
-
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/s.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/s.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-    <title>DomestiQue|The Domestic Service Provider</title>
+    <title>DomestiQue|Booking</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -50,7 +49,20 @@
         iframe::-webkit-scrollbar {
             display: none;
         }
+        
+        .loadersecond {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('assets/img/7168.gif') 50% 50% no-repeat rgb(249, 249, 249);
+            opacity: .8;
+        }
     </style>
+
+
 
 
     <!-- <script>
@@ -62,6 +74,15 @@
 
 <body>
 
+    <!-- ================================pre loader================= -->
+
+    <div id="includedContent" class="loadersecond"></div>
+
+    <script>
+        $(window).on('load', function() {
+            $(".loadersecond").fadeOut("slow");
+        });
+    </script>
 
     <!-- SIDEBAR PART HERE -->
 
@@ -75,12 +96,16 @@
             <div class="sidebar-header">
                 <!-- <h2>DomestiQue</h2> -->
                 <a href="#" style="margin-left:-20px">
-                    <img src="assets/img/s.png" alt="Logo" style="width:100px;">
+                    <img id="imagetobechanged" src="assets/img/s.png" alt="Logo" style="width:100px;">
                 </a>
             </div>
             <hr>
 
             <ul class="list-unstyled components">
+
+                <li id="insession">
+                    <a href="" data-toggle="modal" data-target="#modalLoginForm" id="dq_user">Login</a>
+                </li>
 
                 <li>
                     <a href="https://dq-booking.herokuapp.com" target="targetframe">Book Now</a>
@@ -121,13 +146,215 @@
         <!-- Page Content Holder -->
 
 
+        <!-- ======MODAL CONTENT ======== -->
+        <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Login</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body mx-3" style="text-align:center">
+                        <div class="md-form mb-5" style="display:inline-flex">
+                            <i class="fa fa-mobile" aria-hidden="true" style="font-size:32px;color: #A51F4B"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <input type="tel" id="defaultForm-email" placeholder="Enter your mobile number" class="form-control validate" pattern="[1-9]{1}[0-9]{9}" oninput="check_mob()">
+
+
+                        </div>
+                        <span id="mob_validate"></span>
+                        <br><br><br>
+                        <div class="md-form mb-4" style="display:inline-flex">
+                            <i class="fa fa-lock" aria-hidden="true" style="font-size:32px;color: #A51F4B"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <input type="text" placeholder="Your OTP" id="defaultForm-pass" class="form-control validate">
+
+                            <button class="btn btn-sm" style="background:white;color:#A51F4B" id="waytogetotp"><b>GET OTP</b></button>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center" style="text-align:center">
+                        <button class="btn" style="background:#A51F4B;color:white" id="waytologin"><b>Login</b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // ===check mob====
+            function check_mob() {
+                x = document.getElementById('defaultForm-email').value
+
+                if (isNaN(x)) {
+                    document.getElementById('mob_validate').innerHTML = "Please match requested format"
+                    document.getElementById('waytologin').disabled = true
+
+                }
+
+                if (x.indexOf(" ") != -1 || (x.length < 10) || x.length > 10) {
+                    document.getElementById('mob_validate').innerHTML = "Please enter a valid mobile number! "
+                    document.getElementById('mob_validate').style.color = 'red'
+                    document.getElementById('waytologin').disabled = true
+                }
+
+                if (x.length == 10 && isNaN(x) == false) {
+                    document.getElementById('mob_validate').innerHTML = "Number looks good!"
+                    document.getElementById('mob_validate').style.color = 'forestgreen'
+                    document.getElementById('waytologin').disabled = false
+
+
+                }
+
+
+            }
+            var otp_send = Math.floor(1000 + Math.random() * 9000);
+
+            // console.log(sessionStorage.psw);
+
+
+
+
+            if (sessionStorage.psw) {
+                $("#dq_user").text("My Bookings (" + sessionStorage.psw + ")");
+                $('#dq_user').removeAttr('data-toggle')
+                $('#dq_user').removeAttr('data-target')
+                $("#dq_user").attr('target', 'targetframe')
+                $("#dq_user").attr('href', 'mybooking.html')
+                $('ul').append('<li><a href="#" id="logout">Logout</a></li>');
+                $('#imagetobechanged').attr('src', 'assets/img/pp.png');
+                // $('#dq_user').click(function() {
+                //         alert("eyss")
+                //     })
+                // $('#insession').html('');
+                // $('#insession').addClass('dropdown');
+                // $('#insession').html('<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">DQ_USER<span class = "caret"> </span></button><ul class = "dropdown-menu"><li> <a href = "#">My Services</a></li><li> <a href = "#" > Logout</a></li></ul>');
+
+
+            }
+
+
+
+
+            // console.log(otp_send)
+            $('#waytogetotp').click(function() {
+                keys = {}
+                keys.mob = "91" + document.getElementById('defaultForm-email').value;
+                keys.sms = otp_send
+                if (keys.mob == "") {
+                    swal("Wait!", "Please fill all the fields! ", "error");
+                } else {
+                    var otp_api = "https://dq-otp.herokuapp.com/";
+                    $.post(otp_api, keys);
+
+                }
+            })
+
+            $('#waytologin').click(function() {
+                data = {}
+                data.psw = document.getElementById('defaultForm-email').value
+                data.otp_entered = document.getElementById('defaultForm-pass').value
+                data.otp_send = otp_send
+                data.name = ""
+                data.email = ""
+                data.state = ""
+
+
+                if (data.otp_entered != data.otp_send || data.psw == "" || data.otp_entered == "") {
+                    swal('Wait', 'Please fill all fields correctly', 'error')
+
+                } else {
+                    $.ajax({
+                        type: 'POST',
+
+                        // url: 'http://localhost:3001/users/register',
+                        url: 'https://dq-login.herokuapp.com/users/register',
+                        data: data,
+                        crossDomain: true,
+                        dataType: 'json',
+                        headers: {
+                            'Access-Control-Allow-Origin': '*'
+                        },
+
+                        error: function(data) {
+
+                        },
+                        complete: function() {
+
+                            $('#defaultForm-email').val('')
+                            $('#defaultForm-pass').val('')
+
+                        }
+                    }).done(function(data) {
+
+                        // console.log(data)
+
+                        if (typeof(Storage) !== "undefined") {
+                            sessionStorage.psw = data.psw;
+                            sessionStorage.email = data.email;
+                            sessionStorage.state = data.state;
+                            sessionStorage.name = data.name
+                            if (sessionStorage.psw) {
+
+
+                            } else {
+                                swal('Oops!', 'Login Again', 'error')
+                            }
+
+                        } else {
+                            swal('Oops!', 'Something went wrong', 'error')
+                        }
+
+                        swal("Wait", {
+                            title: "Logging in... ",
+                            buttons: false,
+                            timer: 2000,
+
+                        }).then(function() {
+                            window.setTimeout(function() {}, 2000);
+                            location.reload();
+                        });
+
+
+
+
+
+                    })
+                }
+
+
+            })
+
+
+            // =====================================LOGOUT=========
+            $('#logout').click(function() {
+
+
+                swal("please wait ", {
+                    title: "Logging you out... ",
+                    buttons: false,
+                    timer: 2000,
+
+                }).then(function() {
+                    sessionStorage.clear();
+                    window.setTimeout(function() {}, 2000);
+                    location.reload();
+                })
+
+
+            })
+
+            // ========
+        </script>
 
         <div class="container-fluid row" style="background:#A51F4B;margin: 0">
 
 
             <div class="col-md-5 col-sm-4 col-xs-2">
                 <button type="button" id="sidebarCollapse" class="btn navbar-btn" style="background:#A51F4B;margin-left: -9px">
-                                 <i class="glyphicon glyphicon-align-left" style="color:white;font-size: 20px;">
+                                 <i class="glyphicon glyphicon-align-justify" style="color:white;font-size: 20px;">
                                      
                                  </i>
                             
@@ -181,19 +408,18 @@
                 $('#sidebar').removeClass('active');
                 $('.overlay').fadeOut();
             }
-            
-            
-//             =====
-             $(document).keydown(function(event) {
-                  document.addEventListener('contextmenu', event => event.preventDefault());
-            if (event.keyCode == 123) { // Prevent F12
-                
-                return false;
-            } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I 
-                
-                return false;
-            }
-        });
+
+
+            // ========DISABLE CONSOLE FOR SECURITY REASONS=========
+            $(document).keydown(function(event) {
+                if (event.keyCode == 123) { // Prevent F12
+
+                    return false;
+                } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I 
+
+                    return false;
+                }
+            });
         </script>
 
         <div id="container"><iframe src="https://dq-booking.herokuapp.com" name="targetframe" allowTransparency="true" style="position:absolute;" frameborder="0" width="100%" height="100%" frameborder="0" onload="real()" allow="geolocation">

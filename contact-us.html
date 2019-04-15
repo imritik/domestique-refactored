@@ -38,11 +38,54 @@
     <link rel="stylesheet" href="assets/plugins/flickity/flickity.min.css">
     <!-- Latest compiled and minified CSS -->
 
+    <!-- Latest compiled and minified CSS -->
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
 
 
 
     <!-- CSS Global -->
     <link rel="stylesheet" href="assets/css/theme.min.css">
+
+    <style>
+        .social:hover {
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -o-transform: scale(1.1);
+        }
+        
+        .social {
+            -webkit-transform: scale(0.8);
+            /* Browser Variations: */
+            -moz-transform: scale(0.8);
+            -o-transform: scale(0.8);
+            -webkit-transition-duration: 0.5s;
+            -moz-transition-duration: 0.5s;
+            -o-transition-duration: 0.5s;
+        }
+        
+        #social-fb:hover {
+            color: #3B5998;
+        }
+        
+        #social-tw:hover {
+            color: #C02195;
+        }
+        
+        #social-gp:hover {
+            color: #d34836;
+        }
+        
+        #social-em:hover {
+            color: #00E676;
+        }
+    </style>
 
 
 
@@ -109,7 +152,7 @@
                                 Call us
                             </h4>
                             <p class="section_contact__info__item__content">
-                                <a href="tel:+919648920115">+91 9648920115</a>
+                                <a href="tel:+918858150032">+91 8858150032</a>
                             </p>
                         </div>
                         <div class="section_contact__info__item">
@@ -148,7 +191,7 @@
                 <div class="col-md-9 order-md-1">
 
                     <!-- Contact form -->
-                    <form class="section_contact__form" action="#" method="POST" id="contact__form">
+                    <form class="section_contact__form" id="contact__form">
                         <div class="form-group">
                             <label for="contact__form__name" class="sr-only">Full name</label>
                             <input type="text" class="form-control" id="contact__form__name" name="contact__form__name" placeholder="Full name">
@@ -164,9 +207,10 @@
                             <textarea class="form-control" id="contact__form__message" name="contact__form__message" rows="9" placeholder="Message"></textarea>
                             <div class="invalid-feedback"></div>
                         </div>
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" id="contactsubmit" class="btn btn-primary">
 							Send message
-						</button>
+                        </button>
+                        <span id="form_erro_msg" style="color:red"></span>
                     </form>
 
                 </div>
@@ -176,6 +220,24 @@
         <!-- / .container -->
     </section>
 
+
+
+    <!-- =======script for contact form======== -->
+    <script>
+        // $('#contactsubmit').click(function() {
+        //     var form_name = document.getElementById('contact__form__name').value;
+        //     var form_email = document.getElementById('contact__form__email').value;
+        //     var form_message = document.getElementById('contact__form__message').value;
+
+        //     if (form_email == "" || form_name == "" || form_message == "") {
+        //         $('#form_error_msg').val('Please fill the required fields!')
+
+        //     } else {
+
+        //     }
+
+        // })
+    </script>
 
 
     <!-- FOOTER
@@ -251,6 +313,16 @@
 
                 </div>
             </div>
+            <div class="row">
+                <div class="text-center center-block">
+
+                    <br />
+                    <a href="https://www.facebook.com/domestique88" target="blank"><i id="social-fb" class="fa fa-facebook fa-3x social"></i></a>
+                    <a href="https://www.instagram.com/official_domestique" target="blank"><i id="social-tw" class="fa fa-instagram fa-3x social"></i></a>
+                    <a href="mailto:domestique88@gmail.com" target="blank"><i id="social-gp" class="fa fa-google fa-3x social"></i></a>
+                    <a href="https://wa.me/919554864888" target="blank"><i id="social-em" class="fa fa-whatsapp fa-3x social"></i></a>
+                </div>
+            </div>
             <!-- / .row -->
         </div>
         <!-- / .container -->
@@ -285,6 +357,6 @@
 
 </body>
 
-<!-- Mirrored from simpleqode.bitbucket.io/touche/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Oct 2018 19:27:03 GMT -->
+
 
 </html>

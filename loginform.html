@@ -1,0 +1,92 @@
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12" style="text-align:center;">
+
+            <br/>
+        </div>
+    </div>
+    <div class="row" style="text-align:center;">
+        <div class="btn-group">
+            <button id="dmOne" type="button" class="btn btn-primary">First modal</button>
+            <button id="dmTwo" type="button" class="btn btn-success">Second modal</button>
+            <button id="dmThree" type="button" class="btn btn-warning">Another modal</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    //For the actual function that creates the modal, see further below.
+    $(function() {
+        $('#dmOne').on('click', function() {
+            new BstrapModal('Simple modal', 'This is a simple modal with some text directly entered in the function call. Nothing special.').Show();
+        });
+        $('#dmTwo').on('click', function() {
+            new BstrapModal('Modal with AJAX data', fakeAJAX()).Show();
+        });
+        $('#dmThree').on('click', function() {
+            new BstrapModal('Example modal', 'A bootstrap table<br/><table class="table table-hover table-condensed"> <thead> <tr> <th>#</th> <th>First Name</th> <th>Last Name</th> <th>Username</th> </tr> </thead> <tbody> <tr> <th scope="row">1</th> <td>Mark</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th scope="row">2</th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th scope="row">3</th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody> </table>').Show();
+        });
+    });
+    // Dummy data provider
+    function fakeAJAX() {
+        var dt = '<div style="text-align:center;width:100%;"><h1>CODEPEN</h1><img src="https://cdn1.iconfinder.com/data/icons/simple-icons/256/codepen-256-black.png"/><p>Remember that the html provided could also come from a real AJAX call!</p></div>';
+        return dt;
+    }
+
+    /* Create Bootstrap Modal Dynamicly
+       USAGE: new BstrapModal('Title','Body Text').Show();
+    -----------------------------------------------------*/
+    var BstrapModal = function(title, body, buttons) {
+        var title = title || "No Title",
+            body = body || "No body",
+            buttons = buttons || [{
+                Value: "CLOSE",
+                Css: "btn-primary",
+                Callback: function(event) {
+                    BstrapModal.Close();
+                }
+            }];
+        var GetModalStructure = function() {
+            var that = this;
+            that.Id = BstrapModal.Id = Math.random();
+            var buttonshtml = "";
+            for (var i = 0; i < buttons.length; i++) {
+                buttonshtml += "<button type='button' class='btn " +
+                    (buttons[i].Css || "") + "' name='btn" + that.Id +
+                    "'>" + (buttons[i].Value || "CLOSE") +
+                    "</button>";
+            }
+            return "<div class='modal fade' name='dynamiccustommodal' id='" + that.Id + "' tabindex='-1' role='dialog' data-backdrop='static' data-keyboard='false' aria-labelledby='" +
+                that.Id + "Label'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close modal-white-close' onclick='BstrapModal.Close()'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>" + title +
+                "</h4></div><div class='modal-body'><div class='row'><div class='col-xs-12 col-md-12 col-sm-12 col-lg-12'>" + body + "</div></div></div><div class='modal-footer bg-default'><div class='col-xs-12 col-sm-12 col-lg-12'>" + buttonshtml + "</div></div></div></div></div>";
+        }();
+        BstrapModal.Delete = function() {
+            var modals = document.getElementsByName("dynamiccustommodal");
+            if (modals.length > 0) document.body.removeChild(modals[0]);
+        };
+        BstrapModal.Close = function() {
+            $(document.getElementById(BstrapModal.Id)).modal('hide');
+            BstrapModal.Delete();
+        };
+        this.Show = function() {
+            BstrapModal.Delete();
+            document.body.appendChild($(GetModalStructure)[0]);
+            var btns = document.querySelectorAll("button[name='btn" + BstrapModal.Id + "']");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", buttons[i].Callback || BstrapModal.Close);
+            }
+            $(document.getElementById(BstrapModal.Id)).modal('show');
+        };
+    };
+</script>
