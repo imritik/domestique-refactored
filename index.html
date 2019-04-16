@@ -163,7 +163,7 @@
                             <input type="tel" id="defaultForm-email" placeholder="Enter your mobile number" class="form-control validate" pattern="[1-9]{1}[0-9]{9}" oninput="check_mob()">
 
 
-                        </div>
+                        </div><br>
                         <span id="mob_validate"></span>
                         <br><br><br>
                         <div class="md-form mb-4" style="display:inline-flex">
@@ -171,7 +171,7 @@
 
                             <input type="text" placeholder="Your OTP" id="defaultForm-pass" class="form-control validate">
 
-                            <button class="btn btn-sm" style="background:white;color:#A51F4B" id="waytogetotp"><b>GET OTP</b></button>
+                            <button class="btn btn-sm" style="background:white;color:#A51F4B" id="waytogetotp" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Sending OTP"><b>GET OTP</b></button>
 
                         </div>
 
@@ -240,16 +240,23 @@
 
             // console.log(otp_send)
             $('#waytogetotp').click(function() {
+
+
                 keys = {}
                 keys.mob = "91" + document.getElementById('defaultForm-email').value;
                 keys.sms = otp_send
-                if (keys.mob == "") {
+                if (document.getElementById('defaultForm-email').value == "") {
                     swal("Wait!", "Please fill all the fields! ", "error");
                 } else {
+                    var $this = $(this);
+                    $this.button('loading');
                     var otp_api = "https://dq-otp.herokuapp.com/";
                     $.post(otp_api, keys);
 
                 }
+                setTimeout(function() {
+                    $this.button('reset');
+                }, 5000);
             })
 
             $('#waytologin').click(function() {
