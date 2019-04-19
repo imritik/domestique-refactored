@@ -10001,7 +10001,7 @@ body {
 
 .section_about {
     min-height: 500px;
-    background: url(../img/big.jpg) no-repeat 50%/cover
+    background: url(../img/big.webp) no-repeat 50%/cover
 }
 
 @media (min-width:768px) {
