@@ -1,0 +1,12 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} !^www\.domestique\.in$ [NC]
+
+RewriteRule ^(.*)$ https://www.domestique.in/$1 [L,R=301]
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
