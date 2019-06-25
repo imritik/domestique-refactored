@@ -20,10 +20,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A Domestic service provider, which provides Carpenter, Electrician, Plumber, AC Repair, Appliances Repair, Computer Repair & Sofa Cleaning at customer's residence within minimum time">
-    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="p:domain_verify" content="155298abfbe460e5f800165b729bf855"/>
-<!--     <meta http-equiv="refresh" content="0;url=https://www.domestique.in/" /> -->
+
     <link rel="icon" type="image/webp" sizes="32x32" href="assets/img/s.webp">
     <link rel="icon" type="image/webp" sizes="16x16" href="assets/img/s.webp">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
@@ -75,58 +73,7 @@
         }
     </script> -->
 </head>
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "LocalBusiness",
-  "name" : "DomestiQue",
-  "telephone" : [ "91 88581-50032", "91 96489-20115" ],
-  "email" : "domestique88@gmail.com",
-  "address" : {
-    "@type" : "PostalAddress",
-    "addressRegion" : "22-A Ramashram Colony, Loco Shed,Moradabad, UP"
-  },
-  "openingHoursSpecification" : [ {
-    "@type" : "OpeningHoursSpecification",
-    "dayOfWeek" : {
-      "@type" : "DayOfWeek",
-      "name" : "Monday - Friday"
-    },
-    "opens" : "Please insert valid ISO 8601 date/time here. Examples: 2015-07-27 or 2015-07-27T15:30"
-  }, {
-    "@type" : "OpeningHoursSpecification",
-    "dayOfWeek" : {
-      "@type" : "DayOfWeek",
-      "name" : "Saturday - Sunday"
-    },
-    "opens" : "Please insert valid ISO 8601 date/time here. Examples: 2015-07-27 or 2015-07-27T15:30"
-  } ],
-  "review" : {
-    "@type" : "Review",
-    "author" : {
-      "@type" : "Person",
-      "name" : "PROF. SATENDRA KUMAR General Manager,TBI-KIET"
-    },
-    "reviewBody" : "Everything in this idea is simple and organised well. The whole team is dedicated toward a single goal to make this company to a whole new level in the Indian market .I wish them Good luck and prosperity in\n                                                their future"
-  }
-}
-</script>
-    
-    <script type="application/ld+json">
-{
-  "@context" : "https://schema.org",
-  "@type" : "Organization",
-  "name" : "DomestiQue Technologies LLP",
-  "url" : "http://www.domestique.in",
-  "sameAs" : [
-    "https://www.facebook.com/domestique88",
-    "https://www.instagram.com/official_domestique/",
-    "http://www.google.com/domestique88",
-    "https://www.youtube.com/channel/UCgy7I0XHzs-5vo1o6RNVBsA",
-    "https://api.whatsapp.com/send?phone=919554864888&text=&source=&data="
-  ]
-}
-</script>
+
 <body>
 
     <!-- ================================pre loader================= -->
@@ -246,6 +193,7 @@
                 if (isNaN(x)) {
                     document.getElementById('mob_validate').innerHTML = "Please match requested format"
                     document.getElementById('waytologin').disabled = true
+                    document.getElementById('waytogetotp').disabled = true
 
                 }
 
@@ -253,13 +201,14 @@
                     document.getElementById('mob_validate').innerHTML = "Please enter a valid mobile number! "
                     document.getElementById('mob_validate').style.color = 'red'
                     document.getElementById('waytologin').disabled = true
+                    document.getElementById('waytogetotp').disabled = true
                 }
 
                 if (x.length == 10 && isNaN(x) == false) {
                     document.getElementById('mob_validate').innerHTML = "Number looks good!"
                     document.getElementById('mob_validate').style.color = 'forestgreen'
                     document.getElementById('waytologin').disabled = false
-
+                    document.getElementById('waytogetotp').disabled = false
 
                 }
 
