@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A Domestic service provider, which provides Carpenter, Electrician, Plumber, AC Repair, Appliances Repair, Computer Repair & Sofa Cleaning at customer's residence within minimum time">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/webp" sizes="32x32" href="assets/img/s.webp">
     <link rel="icon" type="image/webp" sizes="16x16" href="assets/img/s.webp">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
@@ -62,19 +62,99 @@
             background: url('assets/img/7168.gif') 50% 50% no-repeat rgb(249, 249, 249);
             opacity: .8;
         }
+        
+        #alertdiv {
+            background: #EF3B36;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, rgb(245, 128, 124), #FFFFFF);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, rgb(245, 128, 124), #FFFFFF);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        /* -----snackbar css=== */
+        
+        #snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+        
+        #snackbar.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        
+        .form-control {
+            box-shadow: 2px 2px 2px 2px lightgrey;
+        }
+        
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+        
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+        /* --------- */
     </style>
 
 
-
-
-    <!-- <script>
-        function resizeIframe(obj) {
-            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-        }
-    </script> -->
 </head>
 
 <body>
+
+
+    <!-- ------add to home screen ------------ -->
+
+
+
 
     <!-- ================================pre loader================= -->
 
@@ -83,6 +163,24 @@
     <script>
         $(window).on('load', function() {
             $(".loadersecond").fadeOut("slow");
+        });
+    </script>
+
+
+
+    <!-- --------------------------------------- -->
+
+
+    <!-- alert promocode section here ------------- -->
+    <div class="container-fluid row text-center" style="height:fit-content;display: flex;padding: 5px;" id="alertdiv">
+        <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10" style="margin-top:3px;">Get a 20% extra discount on your each booking.&nbsp;Use Promocode&nbsp;<em> "DOMSTQ20"</em></div>
+        <div class="text-center col-md-2 col-lg-2 col-sm-2 col-xs-2"><button id="remove_alertdiv" style="margin-top:4px;background: transparent">x</button></div>
+    </div>
+
+
+    <script>
+        $('#remove_alertdiv').click(function() {
+            $('#alertdiv').fadeOut('slow');
         });
     </script>
 
@@ -171,7 +269,7 @@
                         <div class="md-form mb-4" style="display:inline-flex">
                             <i class="fa fa-lock" aria-hidden="true" style="font-size:32px;color: #A51F4B"></i>&nbsp;&nbsp;&nbsp;&nbsp;
 
-                            <input type="text" placeholder="Your OTP" id="defaultForm-pass" class="form-control validate">
+                            <input type="text" placeholder="Your OTP" id="defaultForm-pass" class="form-control validate" maxlength="4" size="14">
 
                             <button class="btn btn-sm" style="background:white;color:#A51F4B" id="waytogetotp" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Sending OTP"><b>GET OTP</b></button>
 
@@ -179,7 +277,7 @@
 
                     </div>
                     <div class="modal-footer d-flex justify-content-center" style="text-align:center">
-                        <button class="btn" style="background:#A51F4B;color:white" id="waytologin"><b>Login</b></button>
+                        <button class="btn" style="background:#A51F4B;color:white" id="waytologin" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Logging in"><b>Login</b></button>
                     </div>
                 </div>
             </div>
@@ -215,6 +313,7 @@
 
             }
             var otp_send = Math.floor(1000 + Math.random() * 9000);
+            console.log(otp_send);
 
             // console.log(sessionStorage.psw);
 
@@ -229,6 +328,9 @@
                 $("#dq_user").attr('href', 'mybooking.html')
                 $('ul').append('<li><a href="#" id="logout">Logout</a></li>');
                 $('#imagetobechanged').attr('src', 'assets/img/pp.webp');
+                // var ele = document.getElementById('ifrm');
+                // console.log(ele['src']);
+                // ele['src'] = 'file:///home/ritik/Desktop/dq-launch/dq-refactored-final/mybooking.html';
                 // $('#dq_user').click(function() {
                 //         alert("eyss")
                 //     })
@@ -277,6 +379,8 @@
                     swal('Wait', 'Please fill all fields correctly', 'error')
 
                 } else {
+                    var $this = $(this);
+                    $this.button('loading');
                     $.ajax({
                         type: 'POST',
 
@@ -321,11 +425,21 @@
                         swal("Wait", {
                             title: "Logging in... ",
                             buttons: false,
-                            timer: 2000,
+                            timer: 500,
 
                         }).then(function() {
-                            window.setTimeout(function() {}, 2000);
+                            window.setTimeout(function() {}, 500);
+
                             location.reload();
+
+                            // .then(function() {
+                            //     var ele = document.getElementById('ifrm');
+                            //     console.log(ele['src']);
+                            //     ele['src'] = 'file:///home/ritik/Desktop/dq-launch/dq-refactored-final/mybooking.html';
+                            // });
+
+
+
                         });
 
 
@@ -352,6 +466,7 @@
                     sessionStorage.clear();
                     window.setTimeout(function() {}, 2000);
                     location.reload();
+                    // location.assign('file:///home/ritik/Desktop/dq-launch/dq-refactored-final/mybooking.html');
                 })
 
 
@@ -359,6 +474,8 @@
 
             // ========
         </script>
+
+
 
         <div class="container-fluid row" style="background:#A51F4B;margin: 0">
 
@@ -412,23 +529,6 @@
                     setTimeout(real(), 3000);
                 });
 
-                // swal("Welcome", "Please use 'NEXT' and 'BACK' button to navigate", "info")
-                // swal({
-                //     title: "Welcome",
-
-                //     text: "Please use 'NEXT' and 'BACK' button to navigate",
-
-
-                //     html: true,
-                //     buttons: "Proceed",
-                //     showCancelButton: false,
-                //     confirmButtonColor: '#DD6B55',
-                //     confirmButtonText: 'Proceed',
-
-                //     closeOnConfirm: false,
-                //     animation: "slide-from-top"
-
-                // });
             });
 
             function real() {
@@ -447,10 +547,61 @@
                     return false;
                 }
             });
-        </script>
 
-        <div id="container"><iframe src="https://dq-booking.herokuapp.com" name="targetframe" allowTransparency="true" style="position:absolute;" frameborder="0" width="100%" height="100%" frameborder="0" onload="real()" allow="geolocation">
+
+
+            // -----------snackbar show------
+            function mysnackbar(xmsg) {
+                var x = document.getElementById("snackbar");
+
+                x.innerHTML = xmsg;
+                x.className = "show";
+
+                setTimeout(function() {
+                    x.className = x.className.replace("show", "");
+                }, 3000);
+            }
+
+
+            // -----online and offline event listener
+
+            var timeout = 0;
+
+            function handleConnectionChange(event) {
+                if (event.type == "offline") {
+                    timeout = new Date().getMilliseconds();
+                    var checktimeout = timeout + 30000;
+                    // console.log(timeout);
+                    // console.log("You lost connection.");
+                    mysnackbar('Your connection is lost.');
+
+                    // ----for long inactivity------
+                    setTimeout(function() {
+                        if (checktimeout == timeout + 30000) {
+                            location.replace('https://www.domestique.in/offline.html');
+                        }
+                    }, 30000);
+                }
+                if (event.type == "online") {
+                    timeout = 0;
+                    // console.log(timeout);
+
+                    mysnackbar('You are online!');
+                    console.log("You are now back online.");
+                }
+
+
+            }
+            window.addEventListener('online', handleConnectionChange);
+            window.addEventListener('offline', handleConnectionChange);
+        </script>
+        <div id="snackbar">Your connection is lost..</div>
+
+        <div id="container"><iframe id="ifrm" src="https://dq-booking.herokuapp.com" name="targetframe" allowTransparency="true" style="position:absolute;" frameborder="0" width="100%" height="100%" frameborder="0" onload="real()" allow="geolocation">
 </iframe></div>
+
+
+
 
 </body>
 
