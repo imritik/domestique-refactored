@@ -344,7 +344,7 @@
                 // $('#insession').html('');
                 // $('#insession').addClass('dropdown');
                 // $('#insession').html('<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">DQ_USER<span class = "caret"> </span></button><ul class = "dropdown-menu"><li> <a href = "#">My Services</a></li><li> <a href = "#" > Logout</a></li></ul>');
-                mysnackbar('Logged in as: ' + sessionStorage.psw);
+
 
             }
 
@@ -537,6 +537,13 @@
                 $('#sidebar ul').on('click', function() {
                     setTimeout(real(), 3000);
                 });
+
+
+                if (sessionStorage.psw) {
+                    setTimeout(function() {
+                        mysnackbar('Logged in as:&nbsp; ' + sessionStorage.psw);
+                    }, 6000);
+                }
 
             });
 
