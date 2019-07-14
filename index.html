@@ -98,6 +98,13 @@
         .form-control {
             box-shadow: 2px 2px 2px 2px lightgrey;
         }
+        /* ----------------media query--------- */
+        
+        @media only screen and (max-width: 600px) {
+            #calltoaction {
+                display: none;
+            }
+        }
         
         @-webkit-keyframes fadein {
             from {
@@ -251,7 +258,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold">Login</h4>
+                        <h4 class="modal-title w-100 font-weight-bold" style="letter-spacing:0.09em">Login</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -277,7 +284,7 @@
 
                     </div>
                     <div class="modal-footer d-flex justify-content-center" style="text-align:center">
-                        <button class="btn" style="background:#A51F4B;color:white" id="waytologin" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Logging in"><b>Login</b></button>
+                        <button class="btn" style="background:#A51F4B;color:white;box-shadow:2px 2px 2px 2px lightgrey" id="waytologin" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Logging in"><b>Login</b></button>
                     </div>
                 </div>
             </div>
@@ -337,7 +344,7 @@
                 // $('#insession').html('');
                 // $('#insession').addClass('dropdown');
                 // $('#insession').html('<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">DQ_USER<span class = "caret"> </span></button><ul class = "dropdown-menu"><li> <a href = "#">My Services</a></li><li> <a href = "#" > Logout</a></li></ul>');
-
+                mysnackbar('Logged in as: ' + sessionStorage.psw);
 
             }
 
@@ -491,7 +498,9 @@
             </div>
 
             <div class="col-md-7 col-sm-8 col-xs-10">
-                <h1 style="color:white;margin-top:9px;font-weight: 550;width: 80px;margin-left: -9px"><a href=""> DomestiQue</a></h1>
+                <h1 id="brand_name" style="color:white;margin-top:9px;font-weight: 550;width: 80px;margin-left: -9px"><a href=""> DomestiQue</a></h1>
+                <button id="calltoaction" class="btn btn-md" style="float:right;margin-top:-46px;background: transparent;color: white;border: 2px solid white"><a href="tel:918858150032" style="font-size:15px"><b><i class="fa fa-phone" aria-hidden="true"></i>
+              &nbsp;&nbsp;+91 88581-50032</b></a> </button>
             </div>
 
 
@@ -597,7 +606,7 @@
         </script>
         <div id="snackbar">Your connection is lost..</div>
 
-        <div id="container"><iframe id="ifrm" src="https://dq-booking.herokuapp.com" name="targetframe" allowTransparency="true" style="position:absolute;" frameborder="0" width="100%" height="100%" frameborder="0" onload="real()" allow="geolocation">
+        <div id="container"><iframe id="ifrm" src="http://localhost:3000" name="targetframe" allowTransparency="true" style="position:absolute;" frameborder="0" width="100%" height="100%" frameborder="0" onload="real()" allow="geolocation">
 </iframe></div>
 
 
